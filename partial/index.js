@@ -45,7 +45,10 @@ PartialGenerator.prototype.files = function files() {
 
 this.routeData = ''
 
-if (this.route && this.route.length > 0) {
+  var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
+  this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
+
+  if (this.route && this.route.length > 0) {
     var js = [
             "$routeProvider",
             "          .when('"+this.route+"', {",
@@ -56,10 +59,6 @@ if (this.route && this.route.length > 0) {
 
     this.routeData = js.join('\r');
   }
-
-  this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
-
-  var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
 
   this.template('partial.js',   'src/app/'+this.name+'/index.js');
   this.template('partial.html', 'src/app/'+this.name+'/'+this.name+'.tpl.html');
