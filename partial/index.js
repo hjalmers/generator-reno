@@ -43,6 +43,8 @@ PartialGenerator.prototype.askFor = function askFor() {
 
 PartialGenerator.prototype.files = function files() {
 
+this.routeData = ''
+
 if (this.route && this.route.length > 0) {
     var js = [
             "$routeProvider",
@@ -54,7 +56,7 @@ if (this.route && this.route.length > 0) {
 
     this.routeData = js.join('\r');
   }
-  
+
   this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
