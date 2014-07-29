@@ -52,7 +52,7 @@ PartialGenerator.prototype.files = function files() {
   this.template('partial.less', 'src/app/'+this.name+'/'+this.name+'.less');
   this.template('spec.js',      'src/app/'+this.name+'/index.spec.js');
 
-  cgUtils.addToJsFileAsArrayValue('src/app/app.js', 'module app.' + this.name + ' from "app.'+this.name+'.index";', cgUtils.PARTIAL_MODULE_MARKER,'  ');
+  cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.' + this.name + ' from "app.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
 
   //cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
 
