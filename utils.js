@@ -43,7 +43,7 @@ exports.SERVICE_JS_MARKER = "<!-- Add New Service JS Above -->";
 exports.MODEL_JS_MARKER = "<!-- Add New Model JS Above -->";
 exports.PARTIAL_LESS_MARKER = "/* Add Partial LESS Above */"; 
 exports.PARTIAL_JS_MARKER = "<!-- Add New Partial JS Above -->";
-exports.PARTIAL_MODULE_MARKER = "";
+exports.PARTIAL_MODULE_MARKER = "/* Add New Module Above */";
 
 exports.DIRECTIVE_JS_TEST_MARKER = "<!-- Add New Directive Test JS Above -->";
 exports.FILTER_JS_TEST_MARKER = "<!-- Add New Filter Test JS Above -->";
