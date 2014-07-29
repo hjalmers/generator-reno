@@ -11,6 +11,5 @@ angular.amd.module('app.<%= name %>', [
 ])
 
 .controller('<%= ctrlname %>', ['$scope', 
-	function($scope){
-
-}]);
+	function($scope){}
+]);
