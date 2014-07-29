@@ -1,22 +1,22 @@
 {
-  "name": "generator-mrwhite",
-  "version": "0.1.7",
+  "name": "generator-reno",
+  "version": "0.0.1",
   "description": "Yeoman Generator for Large Angular projects.",
   "keywords": [
     "yeoman-generator",
     "angular"
   ],
-  "homepage": "https://github.com/Iteam1337/generator-mrwhite",
-  "bugs": "https://github.com/Iteam1337/generator-mrwhite/issues",
+  "homepage": "https://github.com/socialthrills/generator-mrwhite",
+  "bugs": "https://github.com/socialthrills/generator-mrwhite/issues",
   "author": {
-    "name": "Johan Öbrink",
-    "email": "johan.obrink@gmail.com",
-    "url": "https://github.com/JohanObrink"
+    "name": "Peter Helenefors",
+    "email": "peter@socialthrills.se",
+    "url": "https://github.com/peterhel"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Iteam1337/generator-mrwhite.git"
+    "url": "git://github.com/socialthrills/generator-mrwhite.git"
   },
   "scripts": {
     "test": "mocha"
