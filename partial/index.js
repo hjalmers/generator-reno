@@ -43,11 +43,22 @@ PartialGenerator.prototype.askFor = function askFor() {
 
 PartialGenerator.prototype.files = function files() {
 
+if (this.route && this.route.length > 0){
+    var js = [
+            "$routeProvider",
+            ".when('"+this.route+"', {",
+            "    templateUrl: '"+this.name+"/"+this.name+".tpl.html',",
+            "    controller: '"+this.ctrlname+"'",            
+            "});"
+    ];
+
+  this.routeData = js.join('\r');
+
   this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
 
-  this.template('partial.js',   'src/app/'+this.name+'/index.js');
+  this.template('partial.js',   'src/app/'+this.name+'/index.js', { routeData: routeData });
   this.template('partial.html', 'src/app/'+this.name+'/'+this.name+'.tpl.html');
   this.template('partial.less', 'src/app/'+this.name+'/'+this.name+'.less');
   this.template('spec.js',      'src/app/'+this.name+'/index.spec.js');
@@ -64,15 +75,5 @@ PartialGenerator.prototype.files = function files() {
   cgUtils.addToFile('src/less/base.less','@import "../app/'+this.name+'/'+this.name+'";',cgUtils.PARTIAL_LESS_MARKER,'');
   this.log.writeln(' updating'.green + ' %s','src/less/base.less');
 
-  if (this.route && this.route.length > 0){
-    var js = [
-            "$routeProvider",
-            ".when('"+this.route+"', {",
-            "    templateUrl: '"+this.name+"/"+this.name+".tpl.html',",
-            "    controller: '"+this.ctrlname+"'",            
-            "});"
-    ];
-    cgUtils.addToFile('src/app/'+this.name+'/index.js', js.join('\r'), cgUtils.ROUTE_MARKER,'\t');
-    this.log.writeln(' updating'.green + ' %s','src/app/'+this.name+'/index.js');
   }
 };

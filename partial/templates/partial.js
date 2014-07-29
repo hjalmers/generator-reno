@@ -6,7 +6,7 @@ angular.amd.module('app.<%= name %>', [
     function ($routeProvider) {
         'use strict';
 
-        /* Add New Routes Above */
+        <%= routeData %>
     }
 ])
 
