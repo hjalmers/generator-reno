@@ -43,17 +43,18 @@ PartialGenerator.prototype.askFor = function askFor() {
 
 PartialGenerator.prototype.files = function files() {
 
-if (this.route && this.route.length > 0){
+if (this.route && this.route.length > 0) {
     var js = [
             "$routeProvider",
-            ".when('"+this.route+"', {",
-            "    templateUrl: '"+this.name+"/"+this.name+".tpl.html',",
-            "    controller: '"+this.ctrlname+"'",            
-            "});"
+            "          .when('"+this.route+"', {",
+            "              templateUrl: '"+this.name+"/"+this.name+".tpl.html',",
+            "              controller: '"+this.ctrlname+"'",            
+            "           });"
     ];
 
-  this.routeData = js.join('\r');
-
+    this.routeData = js.join('\r');
+  }
+  
   this.ctrlname = _.capitalize(_.camelize(this.name.replace(/\//g,'-'))) + 'Ctrl';
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
@@ -75,5 +76,5 @@ if (this.route && this.route.length > 0){
   cgUtils.addToFile('src/less/base.less','@import "../app/'+this.name+'/'+this.name+'";',cgUtils.PARTIAL_LESS_MARKER,'');
   this.log.writeln(' updating'.green + ' %s','src/less/base.less');
 
-  }
+  
 };
