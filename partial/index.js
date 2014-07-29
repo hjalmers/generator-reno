@@ -47,22 +47,24 @@ PartialGenerator.prototype.files = function files() {
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
 
-  this.template('partial.js', 'partial/'+this.name+'/'+filename+'.js');
-  this.template('partial.html', 'partial/'+this.name+'/'+filename+'.html');
-  this.template('partial.less', 'partial/'+this.name+'/'+filename+'.less');
-  this.template('spec.js', 'test/unit/controller/'+this.name+'.js');
+  this.template('partial.js',   'src/app/'+this.name+'/index.js');
+  this.template('partial.html', 'src/app/'+this.name+'/'+this.name+'.tpl.html');
+  this.template('partial.less', 'src/app/'+this.name+'/'+this.name+'.less');
+  this.template('spec.js',      'src/app/'+this.name+'/index.spec.js');
 
-  cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  cgUtils.addToJsFileAsArrayValue('src/app/app.js', 'module app.' + this.name + ' from "app.'+this.name+'.index";', cgUtils.PARTIAL_MODULE_MARKER,'  ');
 
-  cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="controller/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_TEST_MARKER,'  ');
+  //cgUtils.addToFile('index.html','<script src="partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+
+  //cgUtils.addToFile('test/unit/index.html','<script src="../../partial/'+this.name+'/'+filename+'.js"></script>',cgUtils.PARTIAL_JS_MARKER,'  ');
+  //cgUtils.addToFile('test/unit/index.html','<script src="controller/'+this.name+'.js"></script>',cgUtils.PARTIAL_JS_TEST_MARKER,'  ');
   
-  this.log.writeln(' updating'.green + ' %s','index.html');
+  //this.log.writeln(' updating'.green + ' %s','index.html');
 
-  cgUtils.addToFile('css/app.less','@import "../partial/'+this.name+'/'+filename+'.less";',cgUtils.PARTIAL_LESS_MARKER,'');
-  this.log.writeln(' updating'.green + ' %s','app/app.less');
+  cgUtils.addToFile('src/less/base.less','@import "../app/'+this.name+'/'+this.name+'";',cgUtils.PARTIAL_LESS_MARKER,'');
+  this.log.writeln(' updating'.green + ' %s','src/less/base.less');
 
-  if (this.route && this.route.length > 0){
+  if (false/*this.route && this.route.length > 0*/){
     var js = [
       "$stateProvider.state('" + _.slugify(this.name) + "', {",
       "    url: '" + this.route + "',",
@@ -72,20 +74,4 @@ PartialGenerator.prototype.files = function files() {
     cgUtils.addToFile('js/setup.js', js.join('\r'), cgUtils.ROUTE_MARKER,'\t');
     this.log.writeln(' updating'.green + ' %s','js/setup.js');
   }
-
-  /*
-    .state('state1', {
-      url: "/state1",
-      templateUrl: "partials/state1.html"
-    })
-    .state('state1.list', {
-      url: "/list",
-      templateUrl: "partials/state1/list.html"
-    })
-    .state('state2', {
-      url: "/state2",
-      templateUrl: "partials/state2.html"
-    })
-   */
-
 };
