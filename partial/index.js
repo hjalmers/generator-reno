@@ -58,7 +58,7 @@ if (this.route && this.route.length > 0){
 
   var filename = this.name.slice(this.name.lastIndexOf('/') + 1);
 
-  this.template('partial.js',   'src/app/'+this.name+'/index.js', { routeData: routeData });
+  this.template('partial.js',   'src/app/'+this.name+'/index.js');
   this.template('partial.html', 'src/app/'+this.name+'/'+this.name+'.tpl.html');
   this.template('partial.less', 'src/app/'+this.name+'/'+this.name+'.less');
   this.template('spec.js',      'src/app/'+this.name+'/index.spec.js');
