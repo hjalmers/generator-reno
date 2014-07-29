@@ -11,5 +11,9 @@ angular.amd.module('app.<%= name %>', [
 ])
 
 .controller('<%= ctrlname %>', ['$scope', 
-	function($scope){}
+	function($scope){
+		'use strict';
+
+		$scope.status = 'Not Implemented';
+	}
 ]);

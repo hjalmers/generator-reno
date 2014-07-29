@@ -18,7 +18,7 @@ describe('<%= ctrlname %>', function () {
         });
     }));
 
-    it('should be implemented', function () {
-        expect('test').toBe('implemented');
+    it('should not be implemented', function () {
+        expect($scope.status).toBe('Not Implemented');
     });
 });
