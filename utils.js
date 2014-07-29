@@ -27,7 +27,7 @@ exports.addToJsFileAsArrayValue = function (filename, lineToAdd, beforeMarker, s
     var firstPartOfFile = fileSrc.substring(0,indexOf);
     var tightIndexOf = firstPartOfFile.lastIndexOf("'");
 
-    fileSrc = fileSrc.substring(0,tightIndexOf) ',\n' + spacing + lineToAdd + "\n" + fileSrc.substring(indexOf);
+    fileSrc = fileSrc.substring(0,tightIndexOf) + ',\n' + spacing + lineToAdd + "\n" + fileSrc.substring(indexOf);
 
     fs.writeFileSync(fullPath,fileSrc);
 
