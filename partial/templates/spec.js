@@ -1,17 +1,24 @@
 describe('<%= ctrlname %>', function () {
+    'use strict';
 
-  var scope, ctrl;
+    var <%= ctrlname %>, $scope, $httpBackend,
+        evt = {
+            stopPropagation: angular.noop,
+            preventDefault: angular.noop
+        };
 
-  beforeEach(function () {
-    module('<%= appname %>');
-    inject(function ($rootScope, $controller) {
-      scope = $rootScope.$new();
-      ctrl = $controller('<%= ctrlname %>', {$scope: scope});
-    });
-  });
-
-  xit('should have tests', function () {
+    beforeEach(module('app.<%= name %>'));
     
-  });
+    beforeEach(inject(function ($controller, $compile, $rootScope) {
+        $scope = $rootScope.$new();
 
+        <%= ctrlname %> = $controller('<%= ctrlname %>', {
+            $scope: $scope,
+            $compile: $compile
+        });
+    }));
+
+    it('should be implemented', function () {
+        expect('test').toBe('implemented');
+    });
 });
