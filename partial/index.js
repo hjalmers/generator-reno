@@ -64,7 +64,7 @@ PartialGenerator.prototype.files = function files() {
   cgUtils.addToFile('src/less/base.less','@import "../app/'+this.name+'/'+this.name+'";',cgUtils.PARTIAL_LESS_MARKER,'');
   this.log.writeln(' updating'.green + ' %s','src/less/base.less');
 
-  if (this.route && this.route.length > 0*/){
+  if (this.route && this.route.length > 0){
     var js = [
             "$routeProvider",
             ".when('"+this.route+"', {",
