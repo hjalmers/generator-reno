@@ -1,20 +1,20 @@
 describe('<%= ctrlname %>', function () {
     'use strict';
 
-    var <%= ctrlname %>, $scope, $httpBackend,
+    var <%= ctrlname %>, $scope,
         evt = {
             stopPropagation: angular.noop,
             preventDefault: angular.noop
         };
 
+    beforeEach(module('app'));
     beforeEach(module('app.<%= name %>'));
     
-    beforeEach(inject(function ($controller, $compile, $rootScope) {
+    beforeEach(inject(function ($controller, $rootScope) {
         $scope = $rootScope.$new();
 
         <%= ctrlname %> = $controller('<%= ctrlname %>', {
-            $scope: $scope,
-            $compile: $compile
+            $scope: $scope
         });
     }));
 
