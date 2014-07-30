@@ -29,10 +29,7 @@ PartialGenerator.prototype.askFor = function askFor() {
   var prompts = [
     {
       name: 'route',
-      message: 'Enter your route url (i.e. /mypartial/:id).',
-      validate: function(answer){
-        return answer && answer.length > 1
-      }
+      message: 'Enter your route url (i.e. /mypartial/:id).  If you don\'t want a route added for you, leave this empty.'
     }
   ];
 
@@ -79,4 +76,6 @@ this.routeData = ''
 
   cgUtils.addToFile('src/less/base.less','@import "../app/'+this.name+'/'+this.name+'";',cgUtils.PARTIAL_LESS_MARKER,'');
   this.log.writeln(' updating'.green + ' %s','src/less/base.less');
+
+  
 };
