@@ -30,7 +30,9 @@ PartialGenerator.prototype.askFor = function askFor() {
     {
       name: 'route',
       message: 'Enter your route url (i.e. /mypartial/:id).',
-      required: true
+      validate: function(answer){
+        return answer && answer.length > 1
+      }
     }
   ];
 
