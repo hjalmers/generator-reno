@@ -5,20 +5,22 @@ describe('<%= ctrlname %>', function () {
         evt = {
             stopPropagation: angular.noop,
             preventDefault: angular.noop
-        };
+        },
+        spy = sinon.spy();
 
     beforeEach(module('app'));
     beforeEach(module('app.<%= name %>'));
     
     beforeEach(inject(function ($controller, $rootScope) {
         $scope = $rootScope.$new();
+        $scope.setBaseCssClass = spy;
 
         <%= ctrlname %> = $controller('<%= ctrlname %>', {
             $scope: $scope
         });
     }));
 
-    it('should not be implemented', function () {
-        expect($scope.status).toBe('Not Implemented');
+    it('should set base css class', function () {
+        expect(spy.calledWith('<%= name %>')).toBeTruthy();
     });
 });

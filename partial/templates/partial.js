@@ -14,6 +14,8 @@ angular.amd.module('app.<%= name %>', [
 	function($scope){
 		'use strict';
 
-		$scope.status = 'Not Implemented';
+        $scope.setBaseCssClass('<%= name %>');
+
+        $scope.$emit('app:state', 'page:loaded');
 	}
 ]);
