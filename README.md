@@ -1,29 +1,8 @@
-#Mr. White Angular generator
-
-               ...... .......... . ..,,,,:...
-      .    ... ,.,,;,L;,;:,,.,..:,,:,ii:;,,. 
-    i ..@    .:;,,.,.,,,,:ii:i;::;1,, ...,,.. ██╗   ██╗ ██████╗
-     t0::   ...ff,...  ..,,:::,......:LGG01,. ╚██╗ ██╔╝██╔═══██╗
-      101. .:18@@@@C,..,;,@i;@C;;..,:fG@@@@f.  ╚████╔╝ ██║   ██║
-      ,t, 8,,t@@@@@@@@@L@@@@@G@@@@@@@C@@@C.C1   ╚██╔╝  ██║   ██║
-       .i10@.i@@0@8t:8@@@@@@@L@@@@@@8:f08;C0:    ██║   ╚██████╔╝
-         ,  i....,,i;;,:L@@,  ..@8;;tf8Li,,,,    ╚═╝    ╚═════╝
-             11,,...,.tG@C;,  ..:L@@t,::,L@t.
-            .G@11,....,fCi,.. ..,:@1:,,,,,.,.
-            .,i::,::@L:8@C,...,:,t@;:@@;,.;,  ███╗   ███╗██████╗     ██╗    ██╗██╗  ██╗██╗████████╗███████╗
-             .:i@it,:,LL@@@@@@C@@@@@@@8C,,G.  ████╗ ████║██╔══██╗    ██║    ██║██║  ██║██║╚══██╔══╝██╔════╝
-            , ,;@.:;@@@@@@@@@@@@@@@@@@@@;1t.. ██╔████╔██║██████╔╝    ██║ █╗ ██║███████║██║   ██║   █████╗ 
-               0@:i8@@:;iLLiG.;:;i8G:;@@C8;   ██║╚██╔╝██║██╔══██╗    ██║███╗██║██╔══██║██║   ██║   ██╔══╝  
-                C,LL@f;,::L@@@@@@81it1f@@C    ██║ ╚═╝ ██║██║  ██║    ╚███╔███╔╝██║  ██║██║   ██║   ███████╗
-                 8:@@Gi;;f@@@@@@@@@0@@@81.    ╚═╝     ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝
-                  :@@@@@@@@@@@@@@@@@@@@@
-                   .@@@@@@@@@@@@@@@@@@i
-                      @@@@@@@@@@@@@@@
-
+#Reno - Angular AMD Generator
 
 >Yeoman Generator for Large Angular Projects
 
-A fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular/)
+A fork of [generator-mrwhite](https://github.com/Iteam1337/generator-mrwhite)
 
 Features
 
@@ -31,19 +10,29 @@ Features
     * Each controller, service, filter, and directive are placed in their own file.  
     * All files related to a conceptual unit are placed together.  For example, the controller and HTML file for a partial are placed together in the same directory.
 * Provides a ready-made Grunt build that produces an extremely optimized distribution.
-   * Build uses [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to use the Angular injection syntax for safe minification (i.e. you dont need `$inject` or `(['$scope','$http',...`.
 * Integrates Bower for package management
 * Includes Yeoman sub-generators for directives, services, partials, and filters
 * Integrates LESS.
-* Testable - Included Yeoman sub-generators also build test skeletons using mocha, chai, sinon sinon-chai and grunt-mocha.
+* Testable - Included Yeoman sub-generators also build test skeletons using karma, chai, sinon sinon-chai and grunt-karma.
 Run test via `grunt test`.
 
-Directory Layout
+Directory Layout - <i>Work in Progress</i>
 -------------
 Below is an explanation of the folder structure.
 
-    /css ........................... usually only contains app.less
-        app.less ................... main app-wide styles
+    /build ......................... runnable version created by grunt containing all files separated
+    /src ........................... base folder for application
+        /app ....................... main folder for applications source code
+            /partial ............... example partial
+                index.js ........... example partial controller
+                index.spec.js ...... example partial controller unit tests
+                partial.less ....... example partial specific LESS
+                partial.tpl.html ... example partial HTML template
+        app.js ..................... application main
+        app.spec.js ................ application main unit tests
+        
+        **** To Be Continued ****
+        
     /img ........................... images (not created by default but included in /dist if added)
     /js ............................ app global javascript files
         setup.js ................... angular module initialization and route setup
@@ -64,7 +53,6 @@ Below is an explanation of the folder structure.
             my-partial.less ........ example partial LESS
     /service ....................... angular services folder
         my-service.js .............. example service
-    /dist .......................... distributable version of app built using grunt and Gruntfile.js
     /bower_component................ 3rd party libraries managed by bower
     /node_modules .................. npm managed libraries used by grunt
 
@@ -79,7 +67,7 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 
 Next, install this generator:
 
-    npm install -g generator-mrwhite
+    npm install -g generator-reno
 
 To create a project:
 
@@ -92,10 +80,9 @@ Grunt Tasks
 
 Now that the project is created, you have 3 simple Grunt commands available:
 
-    grunt         #Runs tests, starts the server and watch
-    grunt server  #This will run a development server with watch & reload enabled.
+    grunt         #Runs tests, and copies files to build/ folder
     grunt test    #Run headless unit tests using PhantomJS.
-    grunt build   #Places a fully optimized (minified, concatenated, and more) in /dist
+    grunt build   #Copies files to build/ folder
 
 Yeoman Subgenerators
 -------------
@@ -103,15 +90,16 @@ Yeoman Subgenerators
 There are a set of sub-generators to initialize empty Angular components.  Each of these generators will:
 
 * Create one or more skeleton files (javascript, LESS, html, etc) for the component type
-* Create a skeleton unit test in /test
-* Update index.html and add the necessary `script` tags.
-* Update app.less and add the @import as needed.
-* For partials, update the setup.js, adding the necessary route call if a route was entered in the generator prompts.
+* For partials, update app.js and add the new module ```angular.amd.module('app', [/* -> HERE <- */])```
+* Update base.less and add the @import as needed.
 
-There are generators for `directive`,`partial`,`service`,`model` and `filter`.
+There are generators for `partial`, and soon `directive`, `service`, `model` and `filter`.
 
 Running a generator:
 
+	yo reno:partial my-partial
+    
+    /* These guys will soon be updated */
     yo mrwhite:directive my-awesome-directive
     yo mrwhite:partial my-partial
     yo mrwhite:service my-service
@@ -143,4 +131,4 @@ The build process uses [grunt-dom-munger](https://github.com/cgross/grunt-dom-mu
 
 Release History
 -------------
-* 2014-03-01 - V0.1.0 Finished enough for general use. Name changed to mrwhite.
+* 2014-07-30 - V0.0.1 No quite ready for public use
