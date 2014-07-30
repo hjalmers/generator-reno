@@ -5,6 +5,6 @@ describe('app.<%= name %>', function () {
     beforeEach(module('app.<%= name %>'));
 
     it('should assign config to local variable', inject(function (config, <%= name %>) {
-        expect(<%= name %>.<%= name %>).toEqual(config);
+        expect(<%= name %>.<%= name %>).toEqual('Just created!');
     }));
 });

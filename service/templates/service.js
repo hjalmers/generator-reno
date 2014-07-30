@@ -7,6 +7,6 @@ angular.amd.module('app.<%= name %>', [
     function (config) {
         'use strict';
 
-  		var <%= name %> = config;
+  		this.<%= name %> = 'Just created!';
     }
 ]);

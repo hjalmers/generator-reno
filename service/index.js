@@ -22,5 +22,7 @@ ServiceGenerator.prototype.files = function files() {
   this.template('service.js', 'src/app/services/'+this.name+'/index.js');
   this.template('spec.js', 'src/app/services/'+this.name+'/index.spec.js');
 
+  cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.' + this.name + ' from "app.services.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
+
   this.log.writeln(' creating'.green + ' %s','files');
 };
