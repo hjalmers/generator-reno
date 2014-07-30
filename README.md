@@ -98,11 +98,15 @@ There are generators for `partial`, and soon `directive`, `service`, `model` and
 Running a generator:
 
 	yo reno:partial my-partial
-    
+    yo reno:service my-service # Generates app/services/my-service/
+                               #                        |- index.js
+                               #                        |- index.spec.js
+                               # 
+                               # and adds the required dependency in app.js
+                               
     /* These guys will soon be updated */
     yo mrwhite:directive my-awesome-directive
     yo mrwhite:partial my-partial
-    yo mrwhite:service my-service
     yo mrwhite:model MyModel
     yo mrwhite:filter my-filter
 
