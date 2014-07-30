@@ -1,16 +1,10 @@
-describe('<%= name %>', function () {
+describe('app.<%= name %>', function () {
+    'use strict';
 
-  var <%= name %>;
+    beforeEach(module('app.config'));
+    beforeEach(module('app.<%= name %>'));
 
-  beforeEach(function () {
-    module('<%= appname %>');
-    inject(function (_<%= name %>_) {
-      <%= name %> = _<%= name %>_;
-    });
-  });
-
-  xit('should have tests', function () {
-    //expect(<%= name %>.doSomething()).to.equal('something');
-  });
-
+    it('should assign config to local variable', inject(function (config, <%= name %>) {
+        expect(<%= name %>.<%= name %>).toEqual(config);
+    }));
 });

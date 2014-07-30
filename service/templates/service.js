@@ -1,7 +1,12 @@
-angular.module('<%= appname %>').service('<%= name %>', function () {
-  'use strict';
+angular.amd.module('app.<%= name %>', [
+    'module app.config from "app.config";'
+])
 
-  var <%= name %> = {};
+.service('<%= name %>', [
+    'config',
+    function (config) {
+        'use strict';
 
-  return <%= name %>;
-});
+  		var <%= name %> = config;
+    }
+]);

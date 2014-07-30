@@ -19,11 +19,8 @@ var ServiceGenerator = module.exports = function ServiceGenerator(args, options,
 util.inherits(ServiceGenerator, yeoman.generators.NamedBase);
 
 ServiceGenerator.prototype.files = function files() {
-  this.template('service.js', 'service/'+this.name+'.js');
-  this.template('spec.js', 'test/unit/service/'+this.name+'.js');
+  this.template('service.js', 'app/services/'+this.name+'/index.js');
+  this.template('spec.js', 'app/service/'+this.name+'/index.spec.js');
 
-  cgUtils.addToFile('index.html','<script src="service/'+this.name+'.js"></script>',cgUtils.SERVICE_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="../../service/'+this.name+'.js"></script>',cgUtils.SERVICE_JS_MARKER,'  ');
-  cgUtils.addToFile('test/unit/index.html','<script src="service/'+this.name+'.js"></script>',cgUtils.SERVICE_JS_TEST_MARKER,'  ');
-  this.log.writeln(' updating'.green + ' %s','index.html');
+  this.log.writeln(' creating'.green + ' %s','files');
 };
