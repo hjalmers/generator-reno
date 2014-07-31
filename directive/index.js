@@ -45,7 +45,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.needpartial = props.needpartial;
     this.amdmodule = props.amdmodule;                         //  src/app/form/field
-    this.moduledir = this.amdmodule.substring(0, this.lesspath.lastIndexOf('/'))         //  src/app/form
+    this.moduledir = this.amdmodule.substring(0, this.amdmodule.lastIndexOf('/'))         //  src/app/form
     this.modulepath = ps.cwd() + '/' + moduleName + '.js';    //  /..project/src/app/form/field
 
     this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
