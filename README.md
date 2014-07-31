@@ -76,11 +76,11 @@ Below is an explanation of the folder structure.
     /build ......................... runnable version created by grunt containing all files separated
     /src ........................... base folder for application
         /app ....................... main folder for applications source code
-            /partial ............... example partial
-                index.js ........... example partial controller
-                index.spec.js ...... example partial controller unit tests
-                partial.less ....... example partial specific LESS
-                partial.tpl.html ... example partial HTML template
+            /module ................ example partial
+                index.js ........... example module controller
+                index.spec.js ...... example module controller unit tests
+                module.less ........ example module specific LESS
+                module.tpl.html .... example module HTML template
         app.js ..................... application main
         app.spec.js ................ application main unit tests
         
