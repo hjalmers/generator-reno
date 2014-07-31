@@ -35,7 +35,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     validate: function(moduleName){
       moduleName += '.js'
       
-      var fullPath = ps.cwd() + moduleName;
+      var fullPath = ps.cwd() + '/' + moduleName;
       if(fs.existsSync(fullPath))
       {
         return true;
