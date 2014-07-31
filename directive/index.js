@@ -4,6 +4,7 @@ var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
 var fs = require('fs');
+var ps = require('process');
 
 var DirectiveGenerator = module.exports = function DirectiveGenerator(args, options, config) {
 
@@ -32,13 +33,20 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     name: 'amdmodule',
     message: 'Enter the path to the module that should hold the directive (i.e. src/app/form/field)?',
     validate: function(moduleName){
-      return fs.existsSync(path + '.js') || fs.existsSync(path);
+      moduleName += '.js'
+      
+      var fullPath = ps.cwd() + moduleName;
+      if(fs.existsSync(fullPath))
+      {
+        return true;
+      }
+      return 'Can not find the specified module: ' + fullPath;
     }
   }];
 
   this.prompt(prompts, function (props) {
     this.needpartial = props.needpartial;
-    this.amdmodule = props.andmodule;
+    this.amdmodule = props.amdmodule;
 
     cb();
   }.bind(this));
