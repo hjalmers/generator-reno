@@ -50,7 +50,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 
     this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
     
-    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/'), this.moduledir.length);
+    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/'), this.moduledir.length); //form
     cb();
   }.bind(this));
 };
@@ -64,7 +64,7 @@ DirectiveGenerator.prototype.files = function files() {
 
     cgUtils.addToFile('src/less/base.less','@import "'+ this.dottedmoduledir+'/'+this.name+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
     this.log.writeln(' updating'.green + ' %s','src/less/base.less'); 
-    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name });
+    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name, modulename: this.modulename });
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
 
   } else {
