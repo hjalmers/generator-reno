@@ -33,9 +33,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     name: 'amdmodule',
     message: 'Enter the path to the module that should hold the directive (i.e. src/app/form/field)?',
     validate: function(moduleName){
-      moduleName += '.js'
-      
-      var fullPath = ps.cwd() + '/' + moduleName;
+      var fullPath = ps.cwd() + '/' + moduleName + '.js';
       if(fs.existsSync(fullPath))
       {
         return true;
@@ -47,7 +45,9 @@ DirectiveGenerator.prototype.askFor = function askFor() {
   this.prompt(prompts, function (props) {
     this.needpartial = props.needpartial;
     this.amdmodule = props.amdmodule;
-
+    this.modulepath = ps.cwd() + '/' + moduleName + '.js';
+    this.moduledir = this.modulepath.substring(0, this.modulepath.lastIndexOf('/'));
+    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/'), this.moduledir.length);
     cb();
   }.bind(this));
 };
