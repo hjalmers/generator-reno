@@ -6,11 +6,11 @@ var yeoman = require('yeoman-generator');
 var CgangularGenerator = module.exports = function CgangularGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  this.on('end', function () {
+  /*this.on('end', function () {
     this.installDependencies({ skipInstall: options['skip-install'] });
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));*/
 };
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
