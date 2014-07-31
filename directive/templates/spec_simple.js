@@ -1,5 +1,5 @@
 describe('<%= name %>', function () {
-
+  'use strict';
   var $compile, outerScope, scope;
 
   beforeEach(function () {
