@@ -26,7 +26,7 @@ try {
 
     for(key in data){
       var rx = new RegExp('<%= ' + key + ' %>', 'g');
-      templateSrc.replace(rx, data[key]);
+      templateSrc = templateSrc.replace(rx, data[key]);
     }
 
     var lastSemicolon = fileSrc.lastIndexOf(";") ;
