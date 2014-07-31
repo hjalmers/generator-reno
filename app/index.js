@@ -15,7 +15,7 @@ var CgangularGenerator = module.exports = function CgangularGenerator(args, opti
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
 
-throw new Error('Not implemented!');
+
 /*CgangularGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
@@ -30,13 +30,14 @@ throw new Error('Not implemented!');
 
     cb();
   }.bind(this));
-};
+};*/
 
 CgangularGenerator.prototype.app = function app() {
-  this.directory('skeleton/','./');
+  this.log.writeln('Sorry pal, generating an entire app is not an option'.red);
+  /*this.directory('skeleton/','./');
   this.template('skeleton/js/setup.js','./js/setup.js');
   this.template('skeleton/bower.json','./bower.json');
   this.template('skeleton/Gruntfile.js','./Gruntfile.js');
   this.template('skeleton/index.html','./index.html');
-  this.template('skeleton/package.json','./package.json');
-};*/
+  this.template('skeleton/package.json','./package.json');*/
+};
