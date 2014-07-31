@@ -26,6 +26,13 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     name: 'needpartial',
     message: 'Does this directive need an external html file (i.e. partial)?',
     default: true
+  },
+  {
+    name: 'amdmodule',
+    message: 'To which module would you like to add the directive (i.e. app.form.field)?',
+    validation: function(moduleName){
+      throw {}
+    }
   }];
 
   this.prompt(prompts, function (props) {
@@ -38,26 +45,21 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 DirectiveGenerator.prototype.files = function files() {
 
   if (this.needpartial){
-    this.template('directive.js', 'directive/'+this.name+'/'+this.name+'.js');
-    this.template('directive.html', 'directive/'+this.name+'/'+this.name+'.html');
-    this.template('directive.less', 'directive/'+this.name+'/'+this.name+'.less');
-    this.template('spec.js', 'test/unit/directive/'+this.name+'.js');
+    this.template('directive.js', 'src/app/directives/'+this.name+'/index.js');
+    this.template('directive.html', 'src/app/directives/'+this.name+'/'+this.name+'.tpl.html');
+    this.template('directive.less', 'src/app/directives/'+this.name+'/'+this.name+'.less');
+    this.template('spec.js', 'src/app//directives/'+this.name+'/index.spec.js');
 
-    cgUtils.addToFile('index.html','<script src="directive/'+this.name+'/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="../../directive/'+this.name+'/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_TEST_MARKER,'  ');
-    this.log.writeln(' updating'.green + ' %s','index.html');
-
-    cgUtils.addToFile('css/app.less','@import "../directive/'+this.name+'/'+this.name+'.less";',cgUtils.DIRECTIVE_LESS_MARKER,'');
-    this.log.writeln(' updating'.green + ' %s','app/app.less'); 
+    cgUtils.addToFile('src/less/base.less','@import "../app/directives/'+this.name+'/'+this.name+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
+    this.log.writeln(' updating'.green + ' %s','src/less/base.less'); 
+    cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.directives.' + this.name + ' from "app.directives.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
+    this.log.writeln(' updating'.green + ' %s','src/app/app.js');     
   } else {
-    this.template('directive_simple.js', 'directive/'+this.name+'.js');
-    this.template('spec_simple.js', 'test/unit/directive/'+this.name+'.js'); 
+    this.template('directive_simple.js', 'src/app/directives/'+this.name+'/index.js');
+    this.template('spec_simple.js', 'src/app/directives/'+this.name+'.js'); 
 
-    cgUtils.addToFile('index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="../../directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_MARKER,'  ');
-    cgUtils.addToFile('test/unit/index.html','<script src="directive/'+this.name+'.js"></script>',cgUtils.DIRECTIVE_JS_TEST_MARKER,'  ');
-    this.log.writeln(' updating'.green + ' %s','index.html');     
+    cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.directives.' + this.name + ' from "app.directives.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
+    this.log.writeln(' updating'.green + ' %s','src/app/app.js');     
   }
 
 };

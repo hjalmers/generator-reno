@@ -1,4 +1,4 @@
-describe('<%= name %>', function () {
+describe('app.directives.<%= name %>', function () {
 
   var $compile, outerScope, scope;
 

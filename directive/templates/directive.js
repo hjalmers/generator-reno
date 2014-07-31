@@ -1,16 +1,9 @@
-angular.module('<%= appname %>').directive('<%= name %>', function () {
+angular.module('app.directives.<%= name %>').directive('<%= name %>', function () {
   'use strict';
 
   return {
-    restrict: 'E',
+    templateUrl: '<%= name %>/<%= name %>.tpl.html',
+    restrict: 'A',
     replace: true,
-    scope: {
-
-    },
-    templateUrl: 'directive/<%= name %>/<%= name %>.html',
-    link: function (scope, element, attrs, fn) {
-
-
-    }
   };
 });
