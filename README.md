@@ -61,19 +61,15 @@ The `directive`, `filter`, `model`, `partial`, and `service` directories won't e
 Getting Started
 -------------
 
-Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
+This generator is not ment for public use. It's a tool for new developers in an existing application and not ment to create an application from scratch.
 
-    npm install -g grunt-cli yo bower
+First, clone the [reno-io repository](https://github.com/socialthrills/reno-ui)
 
-Next, install this generator:
+    git clone https://github.com/socialthrills/reno-ui
 
-    npm install -g generator-reno
+This generator is included in package.json one you've run
 
-To create a project:
-
-    mkdir MyNewAwesomeApp
-    cd MyNewAwesomeApp
-    yo mrwhite
+	npm install
 
 Grunt Tasks
 -------------
@@ -83,6 +79,8 @@ Now that the project is created, you have 3 simple Grunt commands available:
     grunt         #Runs tests, and copies files to build/ folder
     grunt test    #Run headless unit tests using PhantomJS.
     grunt build   #Copies files to build/ folder
+    grunt watch	  #Builds, run tests whenever files are changed.
+                  #It also starts the http-server
 
 Yeoman Subgenerators
 -------------
@@ -93,28 +91,37 @@ There are a set of sub-generators to initialize empty Angular components.  Each 
 * For partials, update app.js and add the new module ```angular.amd.module('app', [/* -> HERE <- */])```
 * Update base.less and add the @import as needed.
 
-There are generators for `partial`, and soon `directive`, `service`, `model` and `filter`.
 
-Running a generator:
+The generators
+---------------
+	yo reno:module a-module
+	
+Creates a module in `app/a-module/` containing the files `index.js`, `index.spec.js`, `a-module.less` and `a-module.tpl.html`
 
-	yo reno:partial my-partial
-    yo reno:service my-service # Generates app/services/my-service/
-                               #                        |- index.js
-                               #                        |- index.spec.js
-                               # 
-                               # and adds the required dependency in app.js
+The less file is automatically included in `css/base.less` and the `app.a-module` is added to the list of modules in `app.js`.
+
+`a-module.spec.js` contains a simple first test.
+
+---------------------------------------------------------------
+
+    
+    yo reno:service a-service 
                                
-    /* These guys will soon be updated */
-    yo mrwhite:directive my-awesome-directive
-    yo mrwhite:partial my-partial
-    yo mrwhite:model MyModel
-    yo mrwhite:filter my-filter
+Creates the folder `app/services/a-service/` contain the files `index.js` and `index.spec.js`.
 
-The name paramater passed (i.e. 'my-awesome-directive') will be used for directory and/or file names.
+The module created for the service, `app.a-service` is added to the list of modules in `app.js`
 
-One quick note, each sub-generator pulls the Angular app/module name from the package.json.  Therefore, if you choose to change the name of your Angular app/module, you must ensure that the name in the package.json stays in sync.
+---------------------------------------------------------------
 
-Build Process
+    yo mrwhite:directive aLittleDirective
+
+The name of the directive is passed with camel casing with is used for the name of the directive, though all templates and references will be formatted as `a-little-directive`.
+
+The generator require you to enter which module you want the directive to belong to. E.g. `src/app/a-module/index`. The generator will find the index.js file and append the directive. `a-little-directive.spec.js` `a-little-directive.tpl.html` and `a-little-directive.less` will also be created of which the less file will be included in `base.less`.
+
+
+
+!Build Process - Not updated!
 -------------
 
 The project will include a ready-made Grunt build that will:
