@@ -63,7 +63,7 @@ The module created for the service, `app.a-service` is added to the list of modu
 
     yo mrwhite:directive aLittleDirective
 
-The name of the directive is passed with camel casing with is used for the name of the directive, though all templates and references will be formatted as `a-little-directive`.
+The name of the directive is entered with camel casing which is used for the name of the directive, though all templates and references will be formatted as `a-little-directive`.
 
 The generator require you to enter which module you want the directive to belong to. E.g. `src/app/a-module/index`. The generator will find the index.js file and append the directive. `a-little-directive.spec.js` `a-little-directive.tpl.html` and `a-little-directive.less` will also be created of which the less file will be included in `base.less`.
 
