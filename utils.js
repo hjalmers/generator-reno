@@ -17,6 +17,24 @@ exports.addToFile = function (filename, lineToAdd, beforeMarker, spacing) {
   }
 };
 
+exports.chainTemplate = function(filename, template){
+try {
+    var fullPath = path.join(process.cwd(),filename);
+    var fileSrc = fs.readFileSync(fullPath,'utf8');
+
+    var templateSrc = fs.readFileSync(template, 'utf8');
+
+    var lastSemicolon = fileSrc.lastIndexOf(";") ;
+
+    fileSrc = fileSrc.substring(0, lastSemicolon) + templateSrc;
+
+    fs.writeFileSync(fullPath,fileSrc);
+
+  } catch(e) {
+    throw e;
+  }
+};
+
 exports.addToJsFileAsArrayValue = function (filename, lineToAdd, beforeMarker, spacing) {
 
   try {
