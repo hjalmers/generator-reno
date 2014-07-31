@@ -1,4 +1,4 @@
-angular.module('app.<%= name %>').directive('<%= name %>', function () {
+.directive('<%= name %>', function () {
   'use strict';
 
   return {

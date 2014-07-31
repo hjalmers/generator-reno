@@ -74,11 +74,9 @@ DirectiveGenerator.prototype.files = function files() {
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
 
   } else {
-    this.template('directive_simple.js', 'src/app/directives/'+this.name+'/index.js');
-    this.template('spec_simple.js', 'src/app/directives/'+this.name+'.js'); 
-
-    cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.directives.' + this.name + ' from "app.directives.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
-    this.log.writeln(' updating'.green + ' %s','src/app/app.js');     
+    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive_simple.js', { name: this.name, modulename: this.modulename, markupname: this.markupname });
+    this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
+    this.template('spec_simple.js', this.moduledir+ '/' + this.markupname + '.spec.js');
   }
 
 };

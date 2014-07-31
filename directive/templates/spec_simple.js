@@ -1,9 +1,9 @@
-describe('app.directives.<%= name %>', function () {
+describe('<%= name %>', function () {
 
   var $compile, outerScope, scope;
 
   beforeEach(function () {
-    module('<%= appname %>');
+    module('app');
     inject(function ($rootScope, _$compile_) {
       outerScope = $rootScope.$new();
       $compile = _$compile_;
