@@ -19,7 +19,7 @@ exports.addToFile = function (filename, lineToAdd, beforeMarker, spacing) {
 
 exports.chainTemplate = function(filename, template){
 try {
-    var fullPath = path.join(process.cwd(),filename);
+    var fullPath = path.join(process.cwd(),filename + '.js');
     var fileSrc = fs.readFileSync(fullPath,'utf8');
 
     var templateSrc = fs.readFileSync(template, 'utf8');
