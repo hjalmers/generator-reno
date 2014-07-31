@@ -63,7 +63,7 @@ DirectiveGenerator.prototype.files = function files() {
     this.log.writeln(' updating'.green + ' %s','src/less/base.less'); 
     cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.directives.' + this.name + ' from "app.directives.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
     this.log.writeln(' updating'.green + ' %s','src/app/app.js');     
-    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/directive.js');
+    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js');
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
 
   } else {
