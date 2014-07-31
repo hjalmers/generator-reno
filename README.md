@@ -40,16 +40,6 @@ Now that the project is created, you have 3 simple Grunt commands available:
     grunt watch	  #Builds, run tests whenever files are changed.
                   #It also starts the http-server
 
-Yeoman Subgenerators
--------------
-
-There are a set of sub-generators to initialize empty Angular components.  Each of these generators will:
-
-* Create one or more skeleton files (javascript, LESS, html, etc) for the component type
-* For partials, update app.js and add the new module ```angular.amd.module('app', [/* -> HERE <- */])```
-* Update base.less and add the @import as needed.
-
-
 The generators
 ---------------
 	yo reno:module a-module
