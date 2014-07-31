@@ -50,7 +50,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 
     this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
     
-    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/'), this.moduledir.length); //form
+    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/') + 1, this.moduledir.length); //form
     cb();
   }.bind(this));
 };
