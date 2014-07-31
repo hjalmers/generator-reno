@@ -44,9 +44,12 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 
   this.prompt(prompts, function (props) {
     this.needpartial = props.needpartial;
-    this.amdmodule = props.amdmodule;
-    this.modulepath = ps.cwd() + '/' + moduleName + '.js';
-    this.moduledir = this.modulepath.substring(0, this.modulepath.lastIndexOf('/'));
+    this.amdmodule = props.amdmodule;                         //  src/app/form/field
+    this.moduledir = this.amdmodule.substring(0, this.lesspath.lastIndexOf('/'))         //  src/app/form
+    this.modulepath = ps.cwd() + '/' + moduleName + '.js';    //  /..project/src/app/form/field
+
+    this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
+    
     this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/'), this.moduledir.length);
     cb();
   }.bind(this));
@@ -55,14 +58,12 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 DirectiveGenerator.prototype.files = function files() {
 
   if (this.needpartial){
-    this.template('directive.html', 'src/app/directives/'+this.name+'/'+this.name+'.tpl.html');
-    this.template('directive.less', 'src/app/directives/'+this.name+'/'+this.name+'.less');
-    this.template('spec.js', 'src/app//directives/'+this.name+'/index.spec.js');
+    this.template('directive.html', this.moduledir + '/'+this.name+'.tpl.html');
+    this.template('directive.less', this.moduledir+'/'+this.name+'.less');
+    this.template('spec.js', this.moduledir+ '/' + this.name + '.spec.js');
 
-    cgUtils.addToFile('src/less/base.less','@import "../app/directives/'+this.name+'/'+this.name+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
+    cgUtils.addToFile('src/less/base.less','@import "'+ this.dottedmoduledir+'/'+this.name+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
     this.log.writeln(' updating'.green + ' %s','src/less/base.less'); 
-    cgUtils.addToJsFileAsArrayValue('src/app/app.js', '\'module app.directives.' + this.name + ' from "app.directives.'+this.name+'.index";\'', cgUtils.PARTIAL_MODULE_MARKER,'    ');
-    this.log.writeln(' updating'.green + ' %s','src/app/app.js');     
     cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name });
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
 
