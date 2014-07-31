@@ -32,7 +32,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     name: 'amdmodule',
     message: 'Enter the path to the module that should hold the directive (i.e. src/app/form/field)?',
     validate: function(moduleName){
-      return fs.existsSync(path + '.js') || s.existsSync(path);
+      return fs.existsSync(path + '.js') || fs.existsSync(path);
     }
   }];
 
