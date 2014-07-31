@@ -73,7 +73,7 @@ Directory Layout - <i>Work in Progress</i>
 -------------
 Below is an explanation of the folder structure.
 
-    /build ......................... runnable version created by grunt containing all files separated
+    /build ......................... runnable version created by grunt
     /src ........................... base folder for application
         /app ....................... main folder for applications source code
             /module ................ example partial
