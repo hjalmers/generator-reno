@@ -17,12 +17,17 @@ exports.addToFile = function (filename, lineToAdd, beforeMarker, spacing) {
   }
 };
 
-exports.chainTemplate = function(filename, template){
+exports.chainTemplate = function(filename, template, data){
 try {
     var fullPath = path.join(process.cwd(),filename + '.js');
     var fileSrc = fs.readFileSync(fullPath,'utf8');
 
     var templateSrc = fs.readFileSync(template, 'utf8');
+
+    for(key in data){
+      var rx = new RegExp('<%= ' + key + ' %>', 'g');
+      templateSrc.replace(rx, data[key]);
+    }
 
     var lastSemicolon = fileSrc.lastIndexOf(";") ;
 
