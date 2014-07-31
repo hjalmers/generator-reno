@@ -15,7 +15,8 @@ var CgangularGenerator = module.exports = function CgangularGenerator(args, opti
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
 
-CgangularGenerator.prototype.askFor = function askFor() {
+throw new Error('Not implemented!');
+/*CgangularGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   var prompts = [{
@@ -38,4 +39,4 @@ CgangularGenerator.prototype.app = function app() {
   this.template('skeleton/Gruntfile.js','./Gruntfile.js');
   this.template('skeleton/index.html','./index.html');
   this.template('skeleton/package.json','./package.json');
-};
+};*/
