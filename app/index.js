@@ -34,6 +34,9 @@ util.inherits(CgangularGenerator, yeoman.generators.Base);
 
 CgangularGenerator.prototype.app = function app() {
   this.log.writeln('Sorry pal, generating an entire app is not an option'.red);
+  this.log.writeln('  yo reno:module'.yellow + ' generates an angular module with a controller and template.');
+  this.log.writeln('  yo reno:service'.yellow + ' generates an angular service.');
+  this.log.writeln('  yo reno:directive'.yellow + ' generates an angular directive in an existing module.');
   /*this.directory('skeleton/','./');
   this.template('skeleton/js/setup.js','./js/setup.js');
   this.template('skeleton/bower.json','./bower.json');
