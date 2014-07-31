@@ -26,7 +26,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     type:'confirm',
     name: 'needpartial',
-    message: 'Does this directive need an external html file (i.e. partial)?',
+    message: 'Does this directive need an external html file?',
     default: true
   },
   {
@@ -56,15 +56,21 @@ DirectiveGenerator.prototype.askFor = function askFor() {
 };
 
 DirectiveGenerator.prototype.files = function files() {
+  var ord = this.name;
+  var m = ord.match(/[A-Z]/g);
+  for(var i = 0; i < m.length;i++){
+    ord = ord.replace(m[i], '-' + m[i].toLowerCase())
+  }
+  this.markupname = ord
 
   if (this.needpartial){
-    this.template('directive.html', this.moduledir + '/'+this.name+'.tpl.html');
-    this.template('directive.less', this.moduledir+'/'+this.name+'.less');
-    this.template('spec.js', this.moduledir+ '/' + this.name + '.spec.js');
+    this.template('directive.html', this.moduledir + '/'+this.markupname+'.tpl.html');
+    this.template('directive.less', this.moduledir+'/'+this.markupname+'.less');
+    this.template('spec.js', this.moduledir+ '/' + this.markupname + '.spec.js');
 
-    cgUtils.addToFile('src/less/base.less','@import "'+ this.dottedmoduledir+'/'+this.name+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
+    cgUtils.addToFile('src/less/base.less','@import "'+ this.dottedmoduledir+'/'+this.markupname+'";',cgUtils.DIRECTIVE_LESS_MARKER,'');
     this.log.writeln(' updating'.green + ' %s','src/less/base.less'); 
-    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name, modulename: this.modulename });
+    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name, modulename: this.modulename, markupname: this.markupname });
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);     
 
   } else {

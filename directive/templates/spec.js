@@ -11,8 +11,8 @@ describe('<%= name %>', function () {
       $templateCache = _$templateCache_;
     });
 
-    $templateCache.put('<%= modulename %>/<%= name %>.tpl.html', '<div></div>');
-    element = $compile('<<%= name %>></<%= name %>>')(outerScope);
+    $templateCache.put('<%= modulename %>/<%= markupname %>.tpl.html', '<div></div>');
+    element = $compile('<<%= markupname %>></<%= markupname %>>')(outerScope);
     outerScope.$digest();
     scope = element.isolateScope();
   });

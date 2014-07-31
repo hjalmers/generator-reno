@@ -2,7 +2,7 @@
   'use strict';
 
   return {
-    templateUrl: '<%= modulename %>/<%= name %>.tpl.html',
+    templateUrl: '<%= modulename %>/<%= markupname %>.tpl.html',
     restrict: 'A',
     replace: true,
   };
