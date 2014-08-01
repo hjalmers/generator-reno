@@ -1,0 +1,209 @@
+	{
+	"general": {
+		"login": "Logga in",
+		"logout": "Logga ut",
+		"email": "E-post",
+		"password": "Lösenord",
+		"amount": "Belopp",
+		"back": "Tillbaka",
+		"next": "Nästa",
+		"menu": "Meny",
+		"day": "Dag",
+		"month": "Månad",
+		"year": "År",
+		"allGames": "Alla spel",
+		"myAccount": "Mitt konto",
+		"support": "Support",
+		"termsAndConditions": "Regler och Villkor",
+		"aboutUs": "Om oss",
+		"pressReleases": "Pressmeddelanden",
+		"toolTip": "Du måste fylla i fältet",
+		"welcomePromoHeadline": "Välkommen till Garbo!",
+		"welcomePromoText": "Du är nu bara några sekunder ifrån att registrera dig hos det trendigaste casinot någonsin. Som ny medlem hos Garbo får ta del av vår välkomstbonus om 100% upp till [AMOUNT] [CURRENCY]. Häng med på Partyt nu!",
+		"search" : "Sök",
+		"searchHelper" : "Ange sökterm",
+		"close" : "Stäng"
+	},
+	"dashboard": {
+		"play4FunTitle": "ROLIGT ATT DU VILL SPELA!",
+		"play4FunText": "När du känner dig redo för lite riktig spänning så kan du registrera ett konto och spela om riktiga pengar.",
+		"play4Btn": "Spela på skoj",
+		"play": "Spela"
+	},
+
+	"login": {
+		"emailAndPassword": "E-post och lösenord",
+		"forgotPassword": "Glömt lösenord",
+		"forgotPasswordSend": "Skicka kod",
+		"welcome": "Välkommen till Garbo",
+		"welcomeText": "Här kan du spela med stil i en säker och trygg miljö.",
+		"setNewPassword": "Sätt nytt lösenord",
+		"newPassword": "Nytt lösenord"
+	},
+
+	"feedback": {
+		"successHeadline": "Strålande!",
+		"savedHeadline": "Sparat!",
+		"errorHeadline": "Något gick tyvärr fel.",
+		"errorTryAgain": "Försök igen"
+	},
+
+	"register": {
+		"headline": "Välkommen till Garbo",
+		"info": "Här kan du spela med stil i en säker och trygg miljö. Du behöver registrera dig som medlem för att kunna börja spela för riktiga pengar.",
+		"newAccount": "Nytt konto",
+		"registerAccountBtn": "Skapa nytt konto",
+		"invalidForm": "Något är inte korrekt ifyllt",
+		"validEmail": "Du måste ange en korrekt e-post adress",
+		"repeatPassword": "Upprepa lösenordet",
+		"repeatPasswordToolTip": "Lösenorden matchar inte",
+		"birthDate": "Födelsedatum",
+		"birthDateToolTip": "Födelsedatum måste vara i formatet 1970-01-01",
+		"man": "Man",
+		"woman": "Kvinna",
+		"personal": "Personuppgifter",
+		"firstName": "Förnamn",
+		"lastName": "Efternamn",
+		"mobile": "Mobilnummer",
+		"mobileInformation": "Till det mobilnummer du anger kommer ett validerings sms att skickas. Du kommer i nästa steg att skriva in den valideringskod som du fått skickat till dig.\n Starta med landskoden ([COUNTRYCODE]) för [COUNTRY]. T.ex. [COUNTRYCODE]701234567.",
+		"mobileToolTip": "Mobilnummer måste vara i formatet +46709123456",
+		"street": "Gatuadress",
+		"zip": "Postnummer",
+		"country": "Land",
+		"city": "Stad",
+		"approve": "Godkänn",
+		"validateHeadline": "Ange ditt mobilnummer",
+		"welcome": "Välkommen till Garbo",
+		"welcomeText": "Här kan du spela med stil i en säker och trygg miljö."
+	},
+
+	"account": {
+		"balance": "Saldo",
+		"deposit": "Sätt in pengar",
+		"settings": "Inställningar",
+		"depositBonus": "Insättningsbonus",
+		"yourLimit": "Din spelgräns",
+		"yourLimitInfo": "Genom att sätta en spelgräns så begränsar du beloppet du är beredd att riskera varje vecka. Det betyder att du inte kan sätta in mer pengar än det belopp du angivit.",
+		"yourLimitFormLegend": "Skriv in en insättningsgräns nedan och klicka sedan på \"SÄTT SPELGRÄNS\". Om du redan har en spelgräns så kommer den nya att börja verka när nuvarande period har gått ut.",
+		"yourInformation": "Dina uppgifter",
+		"updateUser": "Uppdatera",
+		"voucher": "Kampanjkod",
+		"voucherHeadline": "Lös in din kampanjkod",
+		"voucherText": "Här kan du använda en voucherkod som du fått tidigare för att spela med rabatt eller gratis.",
+		"safetyMode": "Barnsäkert läge",
+		"safetyModeText": "Barnsäkert läge gör att du loggas ut snabbare så att risken minskar för att du lämnat telefonen och någon av de små har spelat loss på Gonzo's Quest i ett obevakat ögonblick. Notera att det inte är helt säkert om barnen är snabba på telefonen så se till att du alltid loggar ut eller låser telefonen om barnen är hemma när du spelar.",
+		"safetyModeOn": "På",
+		"safetyModeOff": "Av",
+		"accountId": "Användar-Id",
+		"limit": {
+			"period": "Period",
+			"limitType": "Begränsningstyp",
+			"setLimit": "Sätt spelgräns",
+			"perDay": "Per dag",
+			"perWeek": "Per vecka",
+			"perMonth": "Per månad",
+			"loss": "Förlust",
+			"turnOver": "Turnover",
+			"deposit": "Insättnings",
+			"successText": "Du har satt en [LIMIT_TYPE] begränsning på [AMOUNT] [CURRENCY] per vecka."
+		}
+	},
+
+	"validateAccount": {
+		"noEmailError": "Du måste fylla i din e-post ovan",
+		"newCode": "Ny kod har skickats",
+		"codeSendError": "Kunde inte skicka en ny kod",
+		"validateYourAccount": "Validera ditt konto",
+		"validationCode": "Valideringskod",
+		"validate": "Validera",
+		"sendCodeAgain": "Skicka koden igen",
+		"anSmsHaveBeenSent": "Ett sms har skickats till",
+		"noSms": "Om inget sms har kommit fram testa att klicka på knappen \"Skicka koden igen\". Om du behöver mer hjälp kontakta "
+	},
+
+	"deposit": {
+		"deposit": "Insättning",
+		"info": "Sätt in pengar för att spela på Garbo i en trygg, säker och stilig miljö. [Om bonus är aktiv: Om detta är din första insättning så får du 100% insättningsbonus upp till [AMOUNT] [CURRENCY].] Bonusen behöver omsättas 35 gånger före du kan ta ut dina vinster.",
+		"completeAccount": "Vem är du?",
+		"completeAccountInformation": "För att du skall kunna göra en insättning behöver vi lite mer information om dig.",
+		"withdraw": "Uttag",
+		"withdrawInfo": "Ange det belopp som du vill ta ut. Vi kommer att skyndsamt se till att pengarna hamnar hos dig. Vid större belopp kommer vår kundservice kontakta dig för att göra en identitetskontroll i enlighet med den maltesiska lotteriinspektionens regler.",
+		"withdrawableCash": "Vänligen observera att det belopp som visas ovan kan skilja ifrån det som syns under \"Mitt konto\". Orsaken är att viss del av saldot kan vara bundet till bonusomsättningskraven och är då tillgängligt för uttag tills kraven uppfylls.",
+		"depositBtn": "Sätt in",
+		"withdrawBtn": "Ta ut",
+		"backBtn": "Tillbaka till mitt konto",
+		"choose": "Välj",
+		"ownAmount": "Ange egen summa",
+		"ownAmountToolTip": "Du måste minst ange en krona",
+		"numberToolTip" : "Ange bara siffror",
+		"creditCard": "Kreditkort",
+		"creditCardToolTip": "Du måste ange ett giltigt kreditkortsnummer",
+		"addNewCard": "Lägg till nytt kort",
+		"claimBonus": "Vill du ha bonus?",
+		"successDeposit": "Din insättning på [AMOUNT] [CURRENCY] finns nu tillgängligt på ditt Garbo konto.",
+		"successWithdraw": "Ditt uttag på [AMOUNT] [CURRENCY] har nu tagits ut ifrån ditt Garbo konto.",
+		"enterCvvExplanation": "Din CVV-kod hittar du på baksidan av kreditkortet, efter det tryckta kreditkortsnumret ovanför signaturremsan.",
+		"enterCvv": "Ange CVV kod",
+		"cardName": "Namn på kortet",
+		"cardNumber": "Kortnummer",
+		"month": "Månad",
+		"year": "År",
+		"cvv": "CVV",
+		"card": "Kort",
+		"whatIsCvv": "Vad är CVV/CVC?",
+		"cvvInstructions": "CVV nummert på ditt kreditkort är ett 3 eller 4-siffrigt nummer. Ditt CVV-nummer kan lokaliseras genom att titta på ditt kreditkort, enligt bilden nedan:",
+		"moreDepositOption": "Fler insättningsalternativ"
+	},
+
+	"game": {
+		"close": "Stäng spelet",
+		"quickDeposit": "Snabb insättning"
+	},
+
+	"static": {
+		"message": "Meddelande",
+		"send": "Skicka",
+		"thanksTitle": "Tack!",
+		"thanks": "Vi kontaktar dig snart."
+	},
+
+	"languages": {
+		"choose": "Välj språk",
+		"en": "English",
+		"sv": "Svenska",
+		"no": "Norsk"
+	},
+
+	"error": {
+		"tryAgain": "Försök igen",
+		"default": "Förhoppningsvis vet supporten något om detta. Vänligen kontakta dem.",
+		"login": {
+			"incorrect": "Fel e-post eller lösenord."
+		},
+		"deposit": {
+			"userUpdate": "Misslyckades spara dina konto uppgifter",
+			"unkownPaymentAction": "Okänd betalametod: ",
+			"unkownPaymentProvider": "Okänt betalsätt: "
+		},
+		"register": {
+			"alreadyExists": "Ett konto med den angivna e-post finns redan."
+		},
+		"validate": {
+			"missingMobileNumber": "Ingen mobilnummer kunde hittas. Vänligen kontakta support."
+		},
+		"user": {
+			"failedHeartbeat": "Misslyckades avgöra om du är inloggad eller inte. Vänligen ladda om sidan.",
+			"failedLogout": "Misslyckades logga ut."
+		},
+		"game": {
+			"startMobileGame": "Misslyckades starta mobilspel."
+		}
+	},
+
+	"addToHomescreen" : {
+		"header" : "Lägg till hemskärm",
+		"text" : "Tryck på ikonen nedan eller på menyknappen samt tryck på",
+		"emphasize" : "Lägg till på hemskärmen"
+	}
+
+}

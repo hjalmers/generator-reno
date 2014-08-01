@@ -1,0 +1,209 @@
+{
+	"general": {
+		"login": "Logg inn",
+		"logout": "Logg ut",
+		"email": "E-post",
+		"password": "Passord",
+		"amount": "Beløp",
+		"back": "Tilbake",
+		"next": "Neste",
+		"menu": "Meny",
+		"day": "Dag",
+		"month": "Måned",
+		"year": "År",
+		"allGames": "Alle spill",
+		"myAccount": "Min konto",
+		"support": "Support",
+		"termsAndConditions": "Vilkår og regler",
+		"aboutUs": "Om oss",
+		"pressReleases": "Pressemeldinger",
+		"toolTip": "Dette feltet er påkrevd",
+		"welcomePromoHeadline": "Velkommen til Garbo!",
+		"welcomePromoText": "Du er øyenblikk unna å bli den mest trendy Casino mannskap rundt. Bli en av oss, og få 100% opp til [AMOUNT] [CURRENCY] bonus. Bli med på festen nå.",
+		"search" : "search",
+		"searchHelper" : "Search",
+		"close" : "Close"
+	},
+	"dashboard": {
+		"play4FunTitle": "VI ER SÅ GLAD DU VIL SPILLE",
+		"play4FunText": "Når du føler deg klar for litt skikkelig spenning, kan du registrere en konto og spille for ekte penger.",
+		"play4Btn": "SPILL FOR FUN",
+		"play": "SPILL"
+	},
+
+	"login": {
+		"emailAndPassword": "E-post og passord",
+		"forgottPassword": "Glemt passord",
+		"forgotPasswordSend": "Send kode",
+		"welcome": "Velkommen til Garbo",
+		"welcomeText": "Her kan du spille med stil i et trygt og sikkert miljø.",
+		"setNewPassword": "Sett nytt passord",
+		"newPassword": "Nytt passord"
+	},
+
+	"feedback": {
+		"successHeadline": "Gratulasjoner!",
+		"savedHeadline": "Lagret!",
+		"errorHeadline": "Noe gikk galt",
+		"errorTryAgain": "Prøv på nytt"
+	},
+
+	"register": {
+		"headline": "Velkommen til Garbo",
+		"info": "Her kan du spille med stil i et trygt og sikkert miljø. Du må registrere deg som medlem for å kunne begynne å spille for ekte penger.",
+		"newAccount": "Ny konto",
+		"registerAccountBtn": "Registrer deg",
+		"invalidForm": "Noe mangler",
+		"validEmail": "Du må oppgi en gyldig e-postadresse",
+		"repeatPassword": "Gjenta passord",
+		"repeatPasswordToolTip": "Passordene samsvarer ikke",
+		"birthDate": "Fødselsdato",
+		"birthDateToolTip": "Fødselsdato må være i formatet 1970-01-01",
+		"man": "Man",
+		"woman": "Kvinne",
+		"personal": "Personlig informasjon",
+		"firstName": "Fornavn",
+		"lastName": "Etternavn",
+		"mobile": "Mobilnummer",
+		"mobileInformation": "En SMS med en valideringskode vil bli sendt til dette nummeret. \nEnten bruke formatet 0701234567 eller +46701234567",
+		"mobileToolTip": "Mobilnummer må være i formatet 0709123456 eller +46709123456",
+		"street": "Besøksadresse",
+		"zip": "Postnummer",
+		"city": "By",
+		"country": "Land",
+		"approve": "Godkjenne",
+		"validateHeadline": "Skriv inn mobilnummer",
+		"welcome": "Vilkommen til Garbo",
+		"welcomeText": "Her kan du spille med stil i et trygt og sikkert miljø."
+	},
+
+	"account": {
+		"balance": "Balanse",
+		"deposit": "Sett inn penger",
+		"settings": "Innstillinger",
+		"depositBonus": "Innskudd bonus",
+		"yourLimit": "Gaming grense",
+		"yourLimitInfo": "Ved å sette en gaming grense begrense deg hvor mye du er villig til å risikere hver uke. Det betyr at du ikke kan sette inn mer penger enn det beløpet du angir.",
+		"yourLimitFormLegend": "Skriv inn beløpet du ønsker som du setter grensen nedenfor. Og klikk på \"SETT GAMING GRENSEN\". Hvis du allerede har en grense sett. Den nye grensen vil bli satt for neste periode.",
+		"yourInformation": "Din informasjon",
+		"updateUser": "Oppdater",
+		"voucher": "Kupongkode",
+		"voucherHeadline": "Løs inn verdikupong",
+		"voucherText": "Her kan du bruke en kupongkode som du har mottatt i det siste til å spille på en rabatt eller gratis.",
+		"safetyMode": "Barn 'Safe Mode'",
+		"safetyModeText": "Sikkermodus barnet Lar deg logge ut tante redusere sannsynligheten for å la telefonen uten tilsyn som kan resulterte i et av dine barn som leker og miste alle dine midler på Gonzo er Quest. Merk at denne funksjonen ikke ofre fullstendig beskyttelse hvis barna er veldig fast med telefonen der forgrunnen vi råde deg til å sørge for at du alltid logge deg ut eller låse telefonen hvis barn er rundt mens du spiller.",
+		"safetyModeOn": "På",
+		"safetyModeOff": "Av",
+		"accountId": "Konto-ID",
+		"limit": {
+			"period": "Grunnlag",
+			"limitType": "Grense",
+			"setLimit": "Sett gaming grensen",
+			"perDay": "Per dag",
+			"perWeek": "Per uke",
+			"perMonth": "Per måned",
+			"loss": "Tap",
+			"turnOver": "Omsetning",
+			"deposit": "innskudd",
+			"successText": "Du har satt et [AMOUNT] [CURRENCY] ukentlig [LIMIT_TYPE] grense på Garbo konto."
+		}
+	},
+
+	"validateAccount": {
+		"noEmailError": "Du må skrive inn en e-postadresse",
+		"newCode": "En ny valideringskoden er sendt",
+		"codeSendError": "Det oppstod et problem under sending deg en ny kode",
+		"validateYourAccount": "Validere deg konto",
+		"validationCode": "Valideringskoden",
+		"validate": "Validere",
+		"sendCodeAgain": "Send valideringskoden",
+		"anSmsHaveBeenSent": "En SMS har blitt sendt til",
+		"noSms": "Hvis ingen SMS har kommet til telefonen din, kan du prøve å sende en ny en ved å klikke på knappen \"Send valideringskoden \". Hvis vi kan hjelpe deg på noen måte ta kontakt med vår"
+	},
+
+	"deposit": {
+		"deposit": "Innskudd",
+		"info": "Sette inn penger for å spille på Garbo i en sikker, trygg og stilfullt miljø. [Hvis dette er ditt første innskudd får du 100% bonus opp til [AMOUNT] [CURRENCY].] Bonus krever en omsetning på 35 ganger før du kan ta ut gevinster.",
+		"completeAccount": "Hvem er du?",
+		"completeAccountInformation": "For at du skal gjøre et innskudd, trenger vi litt mer informasjon om deg.",
+		"withdraw": "Angrerett",
+		"withdrawInfo": "Skriv inn beløpet du ønsker å ta ut. Vi vil umiddelbart sørge for at pengene ender opp med deg. For større mengder, vil vår kundeservice kontakte deg for å sikre din identitet i samsvar med maltesiske Lotteries Tilsynets regler.",
+		"withdrawableCash": "Vennligst merk at beløpet vist ovenfor kan avvike til kontosaldoen. Dette er fordi noen midler kan bli knyttet sammen med bonusomsetningskrav og ikke tilgjengelig for uttak til spill gjennom kravene er oppfylt. Saldo inkluderer fondet som er knyttet sammen med en bonus samt uttrekkbare midler, mens de uttrekkbare midler er de du kan ta ut nå.",
+		"depositBtn": "Innskudd",
+		"withdrawBtn": "Angrerett",
+		"backBtn": "Tilbake til min konto",
+		"choose": "Velg",
+		"ownAmount": "Egendefinert beløp",
+		"ownAmountToolTip": "Du må angi minst 1€",
+		"numberToolTip" : "Bare tast inn nummeret",
+		"creditCard": "Kredittkort",
+		"creditCardToolTip": "Du må oppgi en gyldig kredittkortnummer",
+		"addNewCard": "Legg til nytt kredittkort",
+		"claimBonus": "Ønsker du å aktivere bonuser?",
+		"successDeposit": "Din [AMOUNT] [CURRENCY] innskudd har blitt vellykket satt inn på din Garbo konto.",
+		"successWithdraw": "Din [AMOUNT] [CURRENCY] trekke seg har blitt vellykket trukket fra Garbo konto.",
+		"enterCvv": "Skriv inn CVV-kode",
+		"enterCvvExplanation": "Du kan finne CVV-koden på baksiden av kortet ditt, etter kortnummeret over signaturstripen.",
+		"cardName": "Kortholderen navn",
+		"cardNumber": "Kredittkortnummer",
+		"month": "Måned",
+		"year": "Är",
+		"cvv": "CVV",
+		"card": "Kort",
+		"whatIsCvv": "Hva er CVV / CVC?",
+		"cvvInstructions": "CVV-nummer på kredittkortet ditt er en 3 eller 4-sifret nummer. Din CVV-nummer kan være plassert ved å se på kredittkortet ditt, som illustrert i bildet nedenfor:",
+		"moreDepositOption": "Flere innskudd alternativer"
+	},
+
+	"game": {
+		"close": "Lukk spillet",
+		"quickDeposit": "Hurtig innskudd"
+	},
+
+	"static": {
+		"message": "Melding",
+		"send": "Send",
+		"thanksTitle": "Takk skal du ha!",
+		"thanks": "Vi vil være i kontakt."
+	},
+
+	"languages": {
+		"choose": "Velg ditt språk",
+		"en": "English",
+		"sv": "Svenska",
+		"no": "Norsk"
+	},
+
+	"error": {
+		"tryAgain": "Prøv på nytt",
+		"default": "Forhåpentligvis støtter vet noe om dette. Ta kontakt med dem.",
+		"login": {
+			"incorrect": "Feil e-post eller passord."
+		},
+		"deposit": {
+			"userUpdate": "Klarte du sparer kontoinformasjon.",
+			"unkownPaymentAction": "Ukjent betalingsmåte: ",
+			"unkownPaymentProvider": "Ukjent betalingsformidler: "
+		},
+		"register": {
+			"alreadyExists": "En konto med e-postadressen finnes allerede."
+		},
+		"validate": {
+			"missingMobileNumber": "Ingen mobilnummer ble funnet. Ta kontakt med support."
+		},
+		"user": {
+			"failedHeartbeat": "Klarte å bestemme brukerens status. Vennligst oppdater siden.",
+			"failedLogout": "Klarte ikke å logge ut."
+		},
+		"game": {
+			"startMobileGame": "Klarte ikke å starte mobilspillet."
+		}
+	},
+
+	"addToHomescreen" : {
+		"header" : "Add to homescreen",
+		"text" : "Press the icon below or press menu and press",
+		"emphasize" : "Add to homescreen"
+	}
+
+}

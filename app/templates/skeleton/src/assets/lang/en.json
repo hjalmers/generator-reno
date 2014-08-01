@@ -1,0 +1,209 @@
+{
+	"general": {
+		"login": "Login",
+		"logout": "Logout",
+		"email": "Email",
+		"password": "Password",
+		"amount": "Amount",
+		"back": "Back",
+		"next": "Next",
+		"menu": "Menu",
+		"day": "Day",
+		"month": "Month",
+		"year": "Year",
+		"allGames": "All games",
+		"myAccount": "My Account",
+		"support": "Support",
+		"termsAndConditions": "Terms and Conditions",
+		"aboutUs": "About us",
+		"pressReleases": "Pressmeddelanden",
+		"toolTip": "This field is required",
+		"welcomePromoHeadline": "Welcome to Garbo!",
+		"welcomePromoText": "You are moments away from joining the trendiest Casino crew around. Become one of us and get your 100% up to [AMOUNT] [CURRENCY] bonus. Join the party now.",
+		"search": "Search",
+		"searchHelper" : "Search",
+		"close" : "Close"
+	},
+	"dashboard": {
+		"play4FunTitle": "WE'RE SO GLAD YOU WANT TO PLAY",
+		"play4FunText": "When you feel ready for some real excitement, you can register an account and play for real money.",
+		"play4Btn": "PLAY FOR FUN",
+		"play": "PLAY"
+	},
+
+	"login": {
+		"emailAndPassword": "Email and password",
+		"forgotPassword": "Forgot password",
+		"forgotPasswordSend": "Send code",
+		"welcome": "Welcome to Garbo",
+		"welcomeText": "Here you can play in style in a safe and secure environment.",
+		"setNewPassword": "Set new password",
+		"newPassword": "New password"
+	},
+
+	"feedback": {
+		"successHeadline": "Congrats!",
+		"savedHeadline": "Saved!",
+		"errorHeadline": "Something went wrong",
+		"errorTryAgain": "Try again"
+	},
+
+	"register": {
+		"headline": "Welcome to Garbo",
+		"info": "Here you can play in style in a safe and secure environment. You need to register as a member to be able to start playing for real money.",
+		"newAccount": "New account",
+		"registerAccountBtn": "Register a new account",
+		"invalidForm": "Somthing is missing",
+		"validEmail": "You must enter a valid email address",
+		"repeatPassword": "Repeat password",
+		"repeatPasswordToolTip": "The passwords doesn't match",
+		"birthDate": "Birth date",
+		"birthDateToolTip": "Birth date must be in the format 1970-01-01",
+		"man": "Man",
+		"woman": "Woman",
+		"personal": "Personal information",
+		"firstName": "Firstname",
+		"lastName": "Lastname",
+		"mobile": "Mobile number",
+		"mobileInformation": "An SMS with an validation code will be sent to the number you enter here.\nUse international prefix ([COUNTRYCODE]) for [COUNTRY]. ie. [COUNTRYCODE]701234567",
+		"mobileToolTip": "Mobile number needs to be in the format +46709123456",
+		"street": "Street address",
+		"zip": "Zip code",
+		"city": "City",
+		"country": "Country",
+		"approve": "Approve",
+		"validateHeadline": "Enter mobile number",
+		"welcome": "Welcome to Garbo",
+		"welcomeText": "Here you can play in style in a safe and secure environment."
+	},
+
+	"account": {
+		"balance": "Balance",
+		"deposit": "Deposit money",
+		"settings": "Settings",
+		"depositBonus": "Deposit bonus",
+		"yourLimit": "Gaming limit",
+		"yourLimitInfo": "By setting a gaming limit you limit the amount you are willing to risk every week. This means that you can not put in more money than the amount you specify.",
+		"yourLimitFormLegend": "Enter the amount you want as you deposit limit below. And then click \"SET GAMING LIMIT\". If you already have a limit set. The new limit will be set for the next period.",
+		"yourInformation": "Your information",
+		"updateUser": "Update",
+		"voucher": "Voucher code",
+		"voucherHeadline": "Redeem voucher",
+		"voucherText": "Here you can use a voucher code that you received in the past to play at a discount or for free.",
+		"safetyMode": "Kids 'Safe Mode'",
+		"safetyModeText": "Child Safe mode allows you to log out faster reducing the likelihood of leaving your phone unattended which may result in one of your children playing and losing all your funds on Gonzo's Quest. Note that this feature does not offer complete protection if your children are very fast with your phone therefore we advise you to make sure you always log out or lock your phone if children are around whilst you are playing.",
+		"safetyModeOn": "On",
+		"safetyModeOff": "Off",
+		"accountId": "Account-Id",
+		"limit": {
+			"period": "Period",
+			"limitType": "Limit type",
+			"setLimit": "Set gaming limit",
+			"perDay": "Per day",
+			"perWeek": "Per week",
+			"perMonth": "Per month",
+			"loss": "Loss",
+			"turnOver": "Turnover",
+			"deposit": "deposit",
+			"successText": "You have set a [AMOUNT] [CURRENCY] weekly [LIMIT_TYPE] limit on your Garbo Account."
+		}
+	},
+
+	"validateAccount": {
+		"noEmailError": "You need to enter an email address",
+		"newCode": "A new validation code has been sent",
+		"codeSendError": "A problem occured while sending you a new code",
+		"validateYourAccount": "Validate you account",
+		"validationCode": "Validation code",
+		"validate": "Validate",
+		"sendCodeAgain": "Send validation code",
+		"anSmsHaveBeenSent": "A SMS has been sent to",
+		"noSms": "If no SMS has arrived to your phone, try sending a new one by clicking the button \"Send validation code\". If we can assist you in any way please contact our "
+	},
+
+	"deposit": {
+		"deposit": "Deposit",
+		"info": "Deposit money to play at Garbo in a secure, safe and stylish environment. [If this is your first deposit you get 100% deposit bonus up to [AMOUNT] [CURRENCY].] Bonus requires a turnover of 35 times before you can withdraw your winnings.",
+		"completeAccount": "Who are you?",
+		"completeAccountInformation": "In order to make a deposit we need a bit more information about you.",
+		"withdraw": "Withdraw",
+		"withdrawInfo": "Enter the amount you wish to withdraw. We will promptly ensure that the money ends up with you. For larger amounts, our customer service will contact you to ensure your identity in accordance with the Maltese Lotteries Inspectorate rules.",
+		"withdrawableCash": "Kindly note that the amount shown above may differ to your account balance. This is because some funds may be tied in due to bonus wagering requirements and not available for withdrawal until play through requirements are fulfilled. The account balance includes fund which are tied in with a bonus as well as withdrawable funds , whilst the withdrawable funds are those you can withdraw now.",
+		"depositBtn": "Deposit",
+		"withdrawBtn": "Withdraw",
+		"backBtn": "Back to my account",
+		"choose": "Choose",
+		"ownAmount": "Enter own amount",
+		"ownAmountToolTip": "You need to enter at least 1€",
+		"numberToolTip" : "Only enter number",
+		"creditCard": "Credit card",
+		"creditCardToolTip": "You need to enter a valid credit card number",
+		"addNewCard": "Add new credit card",
+		"claimBonus": "Do you want to activate bonuses?",
+		"successDeposit": "Your [AMOUNT] [CURRENCY] deposit has been succesfully deposited into your Garbo Account.",
+		"successWithdraw": "Your [AMOUNT] [CURRENCY] withdraw has been succesfully withdrawn from your Garbo Account.",
+		"enterCvv": "Enter CVV code",
+		"enterCvvExplanation": "You can find the CVV code on the back of your card, following the card number above the signature strip.",
+		"cardName": "Card holder name",
+		"cardNumber": "Credit card number",
+		"month": "Month",
+		"year": "Year",
+		"cvv": "CVV",
+		"card": "Card",
+		"whatIsCvv": "What is CVV/CVC?",
+		"cvvInstructions": "The CVV Number on your credit card is a 3 or 4 digit number. Your CVV number can be located by looking on your credit card, as illustrated in the image below:",
+		"moreDepositOption": "More deposit options"
+	},
+
+	"game": {
+		"close": "Close game",
+		"quickDeposit": "Quick deposit"
+	},
+
+	"static": {
+		"message": "Message",
+		"send": "Send",
+		"thanksTitle": "Thank you!",
+		"thanks": "We'll be in touch."
+	},
+
+	"languages": {
+		"choose": "Choose your prefered language",
+		"en": "English",
+		"sv": "Svenska",
+		"no": "Norsk"
+	},
+
+	"error": {
+		"tryAgain": "Try again",
+		"default": "Hopefully support know something about this. Please contact them.",
+		"login": {
+			"incorrect": "Incorrect email or password."
+		},
+		"deposit": {
+			"userUpdate": "Failed saving you account information.",
+			"unkownPaymentAction": "Unkown payment method: ",
+			"unkownPaymentProvider": "Unkown payment provider: "
+		},
+		"register": {
+			"alreadyExists": "A account with the given email already exists."
+		},
+		"validate": {
+			"missingMobileNumber": "No mobile number was found. Please contact support."
+		},
+		"user": {
+			"failedHeartbeat": "Failed determining user status. Please reload the page.",
+			"failedLogout": "Failed to log out."
+		},
+		"game": {
+			"startMobileGame": "Failed to start mobile game."
+		}
+	},
+
+	"addToHomescreen" : {
+		"header" : "Add to homescreen",
+		"text" : "Press the icon below or press menu and press",
+		"emphasize" : "Add to homescreen"
+	}
+
+}
