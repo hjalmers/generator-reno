@@ -10,9 +10,6 @@ describe('BaseCtrl', function () {
     beforeEach(module(function () {
         return function (_$httpBackend_) {
             $httpBackend = _$httpBackend_;
-            $httpBackend.whenGET('/assets/lang/en.json').respond();
-            $httpBackend.whenGET('/assets/lang/sv.json').respond();
-            $httpBackend.whenGET('/api/auth/get/accountstatus').respond();
         };
     }));
 
@@ -43,15 +40,12 @@ describe('BaseCtrl', function () {
         expect($scope.$broadcast).toHaveBeenCalledWith('logo:close');
     }));
 
-    it('should set Localization locale to what\'s saved in storage', inject(function ($controller, storage, Localization) {
-        spyOn(Localization, 'setCurrentLanguage');
+    it('should set Localization locale to what\'s saved in storage', inject(function ($controller, storage) {
         storage.set('preferedLanguage', 'sv');
 
         $controller('BaseCtrl', {
             $location: $location,
             $scope: $scope
         });
-
-        expect(Localization.setCurrentLanguage).toHaveBeenCalledWith('sv');
     }));
 });

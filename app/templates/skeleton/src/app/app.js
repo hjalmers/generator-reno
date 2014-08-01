@@ -5,7 +5,6 @@ angular.amd.module('app', [
     'ngCookies',
     'templates-app',
     'angularLocalStorage',
-    'module translate.localization from "app.translate.localization";'
     /* Add New Module Above */
 ])
 
@@ -38,8 +37,8 @@ angular.amd.module('app', [
 ])
 
 .controller('BaseCtrl', [
-    '$scope', '$q', '$rootScope', '$location', 'storage', 'Localization', 'Authentication',
-    function ($scope, $q, $rootScope, $location, config, storage, Localization, Authentication) {
+    '$scope', '$q', '$rootScope', '$location', 'storage',
+    function ($scope, $q, $rootScope, $location, config, storage) {
         'use strict';
 
         function appLoaded($event, evtData) {
@@ -49,7 +48,6 @@ angular.amd.module('app', [
             });
         }
 
-        $scope.gettext = Localization.getText;
         $scope.appState = 'not-loaded';
         $scope.cssClass = {
             appState: '',
@@ -98,18 +96,6 @@ angular.amd.module('app', [
             $location.path('/notallowed');
             return;
         }
-
-        Localization.setCurrentLanguage(storage.get('preferedLanguage') || config.get('accept-language'));
-
-        $q.all([Localization.loadLocale(), Authentication.heartbeat()]).then(function () {
-            $scope.appState = 'loaded';
-            $rootScope.$broadcast('user:status', {
-                after: 'app:loaded'
-            });
-        }, function () {
-            $scope.appState = 'loaded';
-            $rootScope.$broadcast('app:loaded');
-        });
     }
 ]);
 
