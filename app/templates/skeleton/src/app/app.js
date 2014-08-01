@@ -16,21 +16,13 @@ angular.amd.module('app', [
 
         if (window.isLegacy) {
             $routeProvider.
-            when('/notsupported', {
-                templateUrl: 'static-page/static-page.tpl.html',
-                controller: 'NotSupportedCtrl'
-            }).
             otherwise({
-                redirectTo: '/notsupported'
+                redirectTo: '/please-generate-initial-module-and-replace-this'
             });
         } else {
             $routeProvider.
-            when('/notallowed', {
-                templateUrl: 'static-page/static-page.tpl.html',
-                controller: 'NotAllowedCtrl'
-            }).
             otherwise({
-                redirectTo: '/playinstyle'
+                redirectTo: '/please-generate-initial-module-and-replace-this'
             });
         }
     }
@@ -41,7 +33,7 @@ angular.amd.module('app', [
     function ($scope, $q, $rootScope, $location, config, storage) {
         'use strict';
 
-        /*function appLoaded($event, evtData) {
+        function appLoaded($event, evtData) {
             $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
                 $scope.cssClass.logo = 'logo';
                 $scope.$broadcast('logo:close');
@@ -95,9 +87,15 @@ angular.amd.module('app', [
 
             $location.path('/notallowed');
             return;
-        }*/
+        }
     }
-]);
+]).then(function (module) {
+    'use strict';
+
+    var $injector = angular.injector(['ng']);
+
+    angular.resumeBootstrap();
+});
 
 if (!window.isLegacy && window.loader) {
     window.loader.startLoader();
