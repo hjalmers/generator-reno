@@ -14,7 +14,7 @@ var CgangularGenerator = module.exports = function CgangularGenerator(args, opti
     this.log.writeln('  yo reno:directive'.yellow + ' generates an angular directive in an existing module.');
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));*/
+  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);

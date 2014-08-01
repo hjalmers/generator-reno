@@ -19,6 +19,18 @@ Run test via `grunt test`.
 Getting Started
 -------------
 
+Create a directory for your app
+
+Then install the generator:
+
+	npm install git://github.com/socialthrills/generator-reno.git
+	
+You're now ready to generate you new app:
+
+	yo reno
+	
+		
+
 This generator is not ment for public use. It's a tool for new developers in an existing application and not ment to create an application from scratch.
 
 First, clone the [reno-io repository](https://github.com/socialthrills/reno-ui)
