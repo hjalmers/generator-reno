@@ -34,7 +34,7 @@ CgangularGenerator.prototype.writing = function () {
     this.template('skeleton/package.json', './packagen.json');
 };
 
-CgangularGenerator.prototype.install = function (){
+CgangularGenerator.prototype.install = function (args, options, config){
     this.installDependencies({ skipInstall: options['skip-install'] });
 };
 
