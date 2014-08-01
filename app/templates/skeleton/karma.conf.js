@@ -22,7 +22,7 @@ module.exports = function ( karma ) {
     exclude: [
       'src/assets/**/*.js'
     ],
-    frameworks: [ 'jasmine', 'sinon-chai' ],
+    /*frameworks: [ 'jasmine', 'sinon-chai' ],*/
     plugins: [ 'karma-sinon-chai', 'karma-html-reporter', 'karma-jasmine', 'karma-coverage', 'karma-firefox-launcher', 'karma-chrome-launcher', 'karma-phantomjs-launcher' ],
     // preprocessors: {
     //     'src/**/*.js': 'coverage'
@@ -61,8 +61,8 @@ module.exports = function ( karma ) {
      * the aesthetic advantage of not launching a browser every time you save.
      */
     browsers: [
-      'PhantomJS',
-      //'Chrome'
+      //'PhantomJS',
+      'Chrome'
       //,'Firefox'
       //,'ChromeCanary'
     ]
