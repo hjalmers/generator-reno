@@ -5,6 +5,7 @@ angular.amd.module('app', [
     'ngCookies',
     'templates-app',
     'angularLocalStorage',
+    'module app.navigation from "app.navigation.index";',
     /* Add New Module Above */
 ])
 
