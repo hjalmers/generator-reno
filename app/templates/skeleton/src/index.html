@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Garbo - Play in style</title>
+		<meta name="description" content="Play in style. Insättningsbonus om 100% upp till 1000 kr, gratispengar för nya spelare: Black Jack, Roulette, Enarmade banditer" />
+		<meta name="keywords" content="casino, kasino, black jack, roulette, enarmade banditer, spelautomater, enarmad bandit, jackpot" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-icon" href="<%= staticPrefix %>/assets/icons/garbo-72.png" />
+		<link rel="apple-touch-icon" href="<%= staticPrefix %>/assets/icons/garbo-120.png" sizes="120x120"/>
+		<link rel="apple-touch-icon" href="<%= staticPrefix %>/assets/icons/garbo-152.png" sizes="152x152"/>
+		<meta name="mobile-web-app-capable" content="yes">
+     	<link rel="icon" href="<%= staticPrefix %>/assets/icons/garbo-196.png" sizes="196x196">
+		<link rel="icon" type="image/x-icon" href="<%= staticPrefix %>/favicon.png" />
+		<!-- head-css -->
+		<% styles.forEach( function ( file ) { %>
+        	<link rel="stylesheet" type="text/css" href="<%= staticPrefix %>/<%= file %>" />
+        <% }); %>
+        <!-- /head-css -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  	ga('create', 'UA-44643363-' + (/garbo\.com/.test(window.location.hostname) ? '1' : '2'), {
+		  		'cookieDomain': 'none'
+			});
+		 	ga('require', 'ecommerce', 'ecommerce.js');
+		</script>
+		<script type="text/javascript">
+			var _adftrack = {
+			   pm: 261032,
+			   id: 5918333
+			};
+		(function(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://track.adform.net/serving/scripts/trackpoint/async/';var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();
+		</script>
+		<script>
+			(function(d) {
+				var e = d.createElement('script');
+				e.src = d.location.protocol + '//app.yieldify.com/yieldify/code.js?yieldify_id=1533&loca='+window.location.href;
+				e.async = true;
+				d.getElementsByTagName("head")[0].appendChild(e);
+			}(document));
+		</script>
+		<!--[if lte IE 8]>
+		<script type="text/javascript">var isLegacy=true;</script>
+		<![endif]-->
+	</head>
+	<body data-ng-controller="BaseCtrl" data-ng-class="cssClass.baseClass" class="base">
+		<a data-ng-class="cssClass.logo" data-ng-href="/" data-ng-click="closeMenu($event)"><span class="icon-garbo-icons-logo"></span></a>
+		<div data-ng-class="cssClass.appState" class="base-view">
+			<div data-ng-view></div>
+			<div data-ng-include="'navigation/navigation.tpl.html'"></div>
+			<div data-feedback-ball></div>
+			<div data-add-to-homescreen></div>
+		</div>
+		<div class="app-loading-canvas">
+			<div class="app-loading">
+				<canvas class="app-loading-spinner" id='garbo-loader' width='150px' height='150px'></canvas>
+			</div>
+		</div>
+		<!-- body-js -->
+		<% scripts.forEach( function ( file ) { %>
+        	<script type="text/javascript" charset="utf-8" src="<%= staticPrefix %>/<%= file %>"></script>
+        <% }); %>
+		<script src="<%= staticPrefix %>/src/app/loader.js"></script>
+		<script src="<%= staticPrefix %>/src/app/app.js"></script>
+		<!-- /body-js -->
+	</body>
+</html>

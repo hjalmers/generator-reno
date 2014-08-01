@@ -1,19 +1,17 @@
 {
   "name": "<%= _.slugify(appname) %>",
-  "version": "0.0.0",
-  "main": "index.html",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components"
-  ],
-  "dependencies": {
-    "angular": "^1.2.0",
-    "angular-resource": "^1.2.0",
-    "angular-mocks": "^1.2.0",
-    "angular-ui-router": "^0.2.9",
-    "less": "^1.7.0",
-    "moment": "^2.5.1",
-    "mrwhite-less-mixins": "^0.1.0"
-  }
+  "version": "1.0.0",
+  "devDependencies": {
+    "angular": "1.2.12",
+    "angular-mocks": "1.2.12",
+    "angular-sanitize": "1.2.12",
+    "angular-route": "1.2.12",
+    "angular-cookies": "1.2.12",
+    "angular-base64": "latest",
+    "ng-amd": "latest",
+    "angularLocalStorage": "latest",
+    "swfobject": "latest",
+    "showdown": "latest"
+  },
+  "dependencies": {}
 }

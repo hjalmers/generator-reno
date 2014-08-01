@@ -1,31 +1,53 @@
 {
   "name": "<%= _.slugify(appname) %>",
-  "version": "0.1.0",
-  "scripts": {
-    "postinstall": "node node_modules/bower/bin/bower install"
+  "author": "Garbo",
+  "version": "2.0.0"
+  "licenses": {
+    "type": "TODO",
+    "url": "ADD LICENSING URL"
   },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "^0.4.2",
-    "grunt-contrib-livereload": "0.1.2",
-    "grunt-contrib-connect": "^0.7.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.3.0",
-    "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-mocha": "^0.4.10",
-    "grunt-angular-templates": "^0.5.3",
-    "grunt-contrib-jshint": "^0.8.0",
-    "grunt-dom-munger": "^3.4.0",
-    "grunt-contrib-htmlmin": "^0.2.0",
-    "grunt-contrib-imagemin": "^0.5.0",
-    "grunt-ngmin": "^0.0.3",
-    "grunt-contrib-less": "^0.10.0",
-    "grunt-contrib-watch": "^0.5.3",
-    "mocha": "^1.17.1",
-    "chai": "^1.9.0",
-    "sinon": "^1.8.2",
+    "angular-amd": "git://github.com/socialthrills/angular-amd.git",
+    "chai": "^1.9.1",
+    "css": "^2.0.0",
+    "generator-reno": "git://github.com/socialthrills/generator-reno.git",
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.11",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-conventional-changelog": "~1.0.0",
+    "grunt-html2js": "~0.2.8",
+    "grunt-http-server": "0.0.5",
+    "grunt-jsbeautifier": "~0.2.4",
+    "grunt-karma": "^0.8.3",
+    "grunt-recess": "~0.5.0",
+    "karma": "^0.12.19",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-coverage": "^0.2.5",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-html-reporter": "^0.2.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-junit-reporter": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-sinon-chai": "^0.2.0",
+    "load-grunt-tasks": "~0.2.0",
+    "lodash": "^2.4.1",
+    "promise": "^5.0.0",
+    "recess": "~1.1.9",
+    "semver": "~2.2.1",
+    "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0",
-    "bower": "^1.2.8"
-  }
-}
+    "socket.io-client": "^1.0.6",
+    "uglify-js": "^2.4.15"
+  },
+  "scripts": {
+    "postinstall": "bower cache clean && bower install"
+  }}

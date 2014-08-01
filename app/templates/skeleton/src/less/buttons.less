@@ -1,0 +1,30 @@
+@button-base-line: 1rem;
+
+.btn {
+    display: inline-block;
+    min-width: 100px;
+    padding: 0 @button-base-line;
+
+    font-size: @font-size;
+    font-weight: 200;
+    line-height: @button-base-line * 2;
+
+    color: @color-text-light;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    background-color: @color-primary;
+    border: none;
+    border-radius: @button-base-line;
+
+    &:focus {
+        .box-shadow(0 0 8px @color-btn-glow);
+    }
+}
+
+.btn[disabled] {
+    opacity: 0.2;
+}
