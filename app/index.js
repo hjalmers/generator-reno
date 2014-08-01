@@ -6,12 +6,13 @@ var yeoman = require('yeoman-generator');
 var CgangularGenerator = module.exports = function CgangularGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
   this.options = options;
+  this.appname = path.basename(process.cwd());
 };
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
 
 
-CgangularGenerator.prototype.prompting = function () {
+/*CgangularGenerator.prototype.prompting = function () {
   var cb = this.async();
 
   var prompts = [{
@@ -25,7 +26,7 @@ CgangularGenerator.prototype.prompting = function () {
 
     cb();
   }.bind(this));
-};
+};*/
 
 CgangularGenerator.prototype.initializing = function () { 
     this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
