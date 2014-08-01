@@ -4,12 +4,13 @@ angular.amd.module('app', [
     'ngRoute',
     'ngCookies',
     'templates-app',
-    'angularLocalStorage'
+    'angularLocalStorage',
+    'module translate.localization from "app.translate.localization";'
     /* Add New Module Above */
 ])
 
-.config(['$routeProvider', '$locationProvider', '$logProvider', 'configProvider',
-    function ($routeProvider, $locationProvider, $logProvider, configProvider) {
+.config(['$routeProvider', '$locationProvider', '$logProvider',
+    function ($routeProvider, $locationProvider, $logProvider) {
         'use strict';
 
         $locationProvider.html5Mode(true).hashPrefix('!');
@@ -33,33 +34,22 @@ angular.amd.module('app', [
                 redirectTo: '/'
             });
         }
-
-        $logProvider.debugEnabled(!configProvider.get('production'));
     }
 ])
 
 .controller('BaseCtrl', [
-    '$scope', '$q', '$rootScope', '$location', 'config', 'storage', 'Localization', 'Authentication', 'User', 'Tracking',
-    function ($scope, $q, $rootScope, $location, config, storage, Localization, Authentication, User, Tracking) {
+    '$scope', '$q', '$rootScope', '$location', 'storage', 'Localization',
+    function ($scope, $q, $rootScope, $location, config, storage, Localization) {
         'use strict';
 
         function appLoaded($event, evtData) {
             $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
                 $scope.cssClass.logo = 'logo';
                 $scope.$broadcast('logo:close');
-
-                Tracking.track.pageView();
-
-                if (config.get('countryNotAllowed') === true) {
-                    $location.path('/notallowed');
-                } else {
-                    $rootScope.$broadcast('user:status');
-                }
             });
         }
 
         $scope.gettext = Localization.getText;
-        $scope.User = User;
         $scope.appState = 'not-loaded';
         $scope.cssClass = {
             appState: '',
@@ -121,45 +111,7 @@ angular.amd.module('app', [
             $rootScope.$broadcast('app:loaded');
         });
     }
-]).then(function (module) {
-    'use strict';
-
-    var $injector = angular.injector(['ng', 'app.config']),
-        config = $injector.get('config');
-
-    config.set('paymentMethods', {
-        'GarboSE': ['creditCard', 'swedbank', 'handelsbanken', 'nordea', 'seb', 'paysafe'],
-        'GarboEU': ['creditCard', 'trustly', 'paysafe']
-    });
-
-    config.set('localization', {
-        'sv': {
-            locale: 'sv',
-            currency: 'SEK'
-        },
-        'en': {
-            locale: 'en',
-            currency: 'EUR'
-        },
-        'no': {
-            locale: 'no',
-            currency: 'EUR'
-        }
-    });
-
-    config.set('depositAmounts', [30, 50, 100]);
-    config.set('minWithdrawAmount', 30);
-
-    config.load('/api/get/config').then(function () {
-        angular.resumeBootstrap();
-    }, function (reason) {
-        if (reason.data && reason.data.error && reason.data.error.error === 'countryNotAllowed') {
-            config.set('countryNotAllowed', true);
-        }
-
-        angular.resumeBootstrap();
-    });
-});
+]);
 
 if (!window.isLegacy && window.loader) {
     window.loader.startLoader();

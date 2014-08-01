@@ -18,7 +18,6 @@ describe('BaseCtrl', function () {
 
     beforeEach(module('angularLocalStorage'));
     beforeEach(module('app'));
-    beforeEach(module('translate.localization'));
 
     beforeEach(inject(function ($controller, _$location_, $rootScope) {
         $location = _$location_;
