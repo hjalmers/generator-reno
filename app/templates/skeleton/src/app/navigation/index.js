@@ -1,12 +1,9 @@
 angular.amd.module('app.navigation', [
     'angularLocalStorage',
-    'module app.capabilities from "app.capabilities";',
-    'module translate.localization from "app.translate.localization";',
-    'module app.resource.user from "app.resource.user";'
 ])
 
-.controller('NavigationCtrl', ['$scope', '$rootScope', '$location', 'storage', 'capabilities', 'Localization', 'User',
-    function ($scope, $rootScope, $location, storage, capabilities, Localization, User) {
+.controller('NavigationCtrl', ['$scope', '$rootScope', '$location', 'storage',
+    function ($scope, $rootScope, $location, storage) {
         'use strict';
 
         $scope.cssClass = {
@@ -19,16 +16,6 @@ angular.amd.module('app.navigation', [
 
             $scope.cssClass.mainNavigation = 'main-navigation main-navigation-open';
             $scope.$emit('logo:expand');
-        };
-
-        $scope.goToDeposit = function ($event) {
-            var path = $location.path();
-            if (capabilities.quickDeposit && storage.get('canQuickDeposit') && (path == '/playinstyle' || path === '/account' || path.substring(0, 5) === '/play')) {
-                $event.preventDefault();
-                $event.stopPropagation();
-                $rootScope.$broadcast('quickDeposit:open');
-                $rootScope.$broadcast('logo:close');
-            }
         };
 
         $scope.toggleSubNav = function ($event, forceClose) {
