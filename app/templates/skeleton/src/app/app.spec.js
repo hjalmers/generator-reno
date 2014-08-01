@@ -1,7 +1,7 @@
 describe('BaseCtrl', function () {
     'use strict';
 
-    var BaseCtrl, $location, $scope, $httpBackend,
+    /*var BaseCtrl, $location, $scope, $httpBackend,
         evt = {
             stopPropagation: angular.noop,
             preventDefault: angular.noop
@@ -47,5 +47,5 @@ describe('BaseCtrl', function () {
             $location: $location,
             $scope: $scope
         });
-    }));
+    }));*/
 });

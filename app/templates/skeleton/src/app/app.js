@@ -41,7 +41,7 @@ angular.amd.module('app', [
     function ($scope, $q, $rootScope, $location, config, storage) {
         'use strict';
 
-        function appLoaded($event, evtData) {
+        /*function appLoaded($event, evtData) {
             $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
                 $scope.cssClass.logo = 'logo';
                 $scope.$broadcast('logo:close');
@@ -95,7 +95,7 @@ angular.amd.module('app', [
 
             $location.path('/notallowed');
             return;
-        }
+        }*/
     }
 ]);
 
