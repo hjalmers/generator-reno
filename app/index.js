@@ -38,4 +38,5 @@ util.inherits(CgangularGenerator, yeoman.generators.Base);
 
 CgangularGenerator.prototype.app = function app() {
   this.directory('skeleton/','./');
+  this.template('skeleton/.bowerrc','./.bowerrc');
 };
