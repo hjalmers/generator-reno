@@ -5,6 +5,7 @@ var yeoman = require('yeoman-generator');
 
 var CgangularGenerator = module.exports = function CgangularGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
+  this.options = options;
 };
 
 util.inherits(CgangularGenerator, yeoman.generators.Base);
@@ -34,8 +35,8 @@ CgangularGenerator.prototype.writing = function () {
     this.template('skeleton/package.json', './packagen.json');
 };
 
-CgangularGenerator.prototype.install = function (args, options, config){
-    this.installDependencies({ skipInstall: options['skip-install'] });
+CgangularGenerator.prototype.install = function (){
+    this.installDependencies({ skipInstall: this.options['skip-install'] });
 };
 
 CgangularGenerator.prototype.end = function (){
