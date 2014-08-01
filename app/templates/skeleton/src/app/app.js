@@ -38,8 +38,8 @@ angular.amd.module('app', [
 ])
 
 .controller('BaseCtrl', [
-    '$scope', '$q', '$rootScope', '$location', 'storage', 'Localization',
-    function ($scope, $q, $rootScope, $location, config, storage, Localization) {
+    '$scope', '$q', '$rootScope', '$location', 'storage', 'Localization', 'Authentication',
+    function ($scope, $q, $rootScope, $location, config, storage, Localization, Authentication) {
         'use strict';
 
         function appLoaded($event, evtData) {
