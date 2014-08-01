@@ -1,0 +1,68 @@
+<div data-ng-controller="NavigationCtrl">
+    <nav data-ng-class="cssClass.mainNavigation">
+        <ul>
+            <li>
+                <a href="javascript:void(0)" data-ng-click="toggleSubNav($event)" class="account-btn">
+                    <span class="icon-garbo-icons-menu"></span>
+                    {{ gettext('general.menu') }}
+                </a>
+            </li>
+            <li data-ng-if="!User.me">
+                <a data-ng-href="/login" class="login-btn">
+                    <span class="icon-garbo-icons-login"></span>{{ gettext('general.login') }}
+                </a>
+            </li>
+            <li data-ng-if="!User.me">
+                <a data-ng-href="/register" class="register-btn">
+                    <span class="icon-garbo-icons-new-account"></span>{{ gettext('register.newAccount') }}
+                </a>
+            </li>
+            <li data-ng-if="User.me">
+                <a data-ng-click="goToDeposit($event)" data-ng-href="/deposit" class="deposit-btn">
+                    <span class="icon-garbo-icons-deposit"></span>{{ gettext('deposit.deposit') }}
+                </a>
+            </li>
+            <li>
+                <a data-ng-href="/playinstyle" class="all-games-btn">
+                    <span class="icon-garbo-icons-all-games"></span>{{ gettext('general.allGames') }}
+                </a>
+            </li>
+            <li>
+                <a href="/search" data-ng-click="toggleSearch($event)" class="search-btn">
+                    <span class="icon-search"></span>{{ gettext('general.search') }}
+                </a>
+            </li>
+
+        </ul>
+        <a href="/search" data-ng-click="toggleSearch($event)" class="search-link">
+            <span class="icon-search"></span>
+        </a>
+        <a href="#" data-ng-click="openMenu($event)" class="opener">
+            <span class="icon-garbo-icons-menu"></span>
+        </a>
+    </nav>
+    <aside class="sub-nav">
+        <ul>
+            <li data-ng-if="User.me">
+                <a data-ng-href="/account">
+                    {{ gettext('general.myAccount') }}
+                </a>
+            </li>
+            <li>
+                <a data-ng-href="/page/about-us">
+                    {{ gettext('general.aboutUs') }}
+                </a>
+            </li>
+            <li>
+                <a data-ng-href="/page/support">
+                    {{ gettext('general.support') }}
+                </a>
+            </li>
+            <li>
+                <a data-ng-href="/page/terms-and-conditions">
+                    {{ gettext('general.termsAndConditions') }}
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>

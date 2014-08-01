@@ -1,0 +1,226 @@
+.main-navigation {
+    position: fixed;
+    top: 0;
+    right: -90px;
+    z-index: 7;
+    width: 80px;
+    height: 100%;
+
+    background-color: @color-text;
+
+    .box-shadow(-1px 0 3px rgba(0, 0, 0, 0.2));
+    .transition(right 0.2s ease-in-out);
+
+    ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        padding: 18px 6px 10px 6px;
+        margin-bottom: 1px;
+
+        font-size: 8px;
+        color: @color-text-light;
+
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        span {
+            display: block;
+            width: 100%;
+            margin-bottom: 4px;
+
+            font-size: 300%;
+        }
+    }
+
+    .opener {
+        position: absolute;
+        top: 0;
+        right: 90px;
+        z-index: 2;
+
+        padding: .7rem .6rem .55rem .7rem;
+        margin: 0;
+
+        font-size: 8px;
+        color: #fff;
+        background-color: @palette-complement-1;
+
+        span {
+            margin-bottom: 0;
+        }
+    }
+
+    .category-btn {
+        padding: 1rem;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &.search-bar-open {
+        right : -80px;
+    }
+
+
+}
+
+.sub-nav {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    z-index: 6;
+
+    width: 160px;
+    height: 100%;
+
+    .transition(right 0.2s ease-in-out);
+
+    ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        background-color: white;
+    }
+
+    ul {
+        border-bottom: 3px solid @palette-main-1;
+        .box-shadow(-1px 0 3px rgba(0, 0, 0, 0.2));
+    }
+
+    li {
+        border-bottom: 1px solid @palette-mono-1;
+    }
+
+    li:last-child {
+        border: none;
+    }
+
+    a {
+        display: block;
+        padding: 8px 1rem;
+        margin-bottom: 1px;
+
+        font-size: .8rem;
+
+        color: @palette-complement-1;
+
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.sub-nav-open {
+    box-shadow: 0 0 5px #000;
+
+    + .sub-nav {
+        right: 80px;
+    }
+}
+
+
+.account .account-btn {
+    background-color: @palette-complement-1;
+}
+
+.login .login-btn {
+    background-color: @palette-complement-2;
+}
+
+.register .register-btn {
+    background-color: @palette-complement-3;
+}
+
+.deposit .deposit-btn {
+    background-color: @palette-complement-3;
+}
+
+.dashboard .all-games-btn {
+    background-color: @palette-complement-4;
+}
+
+.main-navigation-open {
+    right: 0;
+
+    .opener {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: @breakpoint-landscape) {
+    .main-navigation {
+        right: 0;
+
+        .opener {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: @breakpoint-tablet) {
+    .main-navigation {
+        top: 0;
+        right: auto;
+        left: 0;
+
+        width: 100%;
+        height: 5.2rem;
+
+        ul {
+            margin-right: 16px;
+        }
+
+        li {
+            float: right;
+        }
+
+        a {
+            display: inline-block;
+            padding: 20px 8px 15px 11px;
+            font-size: 12px;
+            min-width : 80px;
+
+            span {
+                margin-bottom: 6px;
+                font-size: 228%;
+            }
+        }
+
+        &.search-bar-open {
+            ul {
+                position: relative;
+                top : -100px;
+            }
+        }
+    }
+
+    .sub-nav {
+        top: 5.2rem;
+    }
+
+
+    .sub-nav-open + .sub-nav {
+        right: 0;
+    }
+}
+
+.not-allowed {
+    display: none;
+}
+
+.search-bar-open {
+    .opener {
+        top : -100px;
+    }
+    a.search-link {
+        top : -100px;
+    }
+}
