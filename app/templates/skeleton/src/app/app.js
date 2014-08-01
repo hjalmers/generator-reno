@@ -14,7 +14,7 @@ angular.amd.module('app', [
 
         $locationProvider.html5Mode(true).hashPrefix('!');
 
-        if (window.isLegacy) {
+        /*if (window.isLegacy) {
             $routeProvider.
             when('/notsupported', {
                 templateUrl: 'static-page/static-page.tpl.html',
@@ -32,7 +32,7 @@ angular.amd.module('app', [
             otherwise({
                 redirectTo: '/'
             });
-        }
+        }*/
     }
 ])
 
