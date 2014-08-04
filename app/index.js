@@ -33,7 +33,7 @@ CgangularGenerator.prototype.initializing = function () {
 };
 CgangularGenerator.prototype.writing = function () {
     this.directory('skeleton/','./');
-    this.template('skeleton/package.json', './packagen.json');
+    this.template('skeleton/package.json', './package.json');
 };
 
 CgangularGenerator.prototype.install = function (){
