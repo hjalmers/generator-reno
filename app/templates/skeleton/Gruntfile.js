@@ -467,7 +467,7 @@ module.exports = function (grunt) {
     grunt.registerTask('pre-commit', ['verifyJs', 'recess:lint', 'test']);
 
     grunt.renameTask('watch', 'delta');
-    grunt.registerTask('watch', ['build', 'test', 'http-server:dev', 'delta']);
+    grunt.registerTask('watch', ['build', 'pre-commit', 'http-server:dev', 'delta']);
 
     grunt.registerTask('default', ['build', 'test', 'compile']);
 
