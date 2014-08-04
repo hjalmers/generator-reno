@@ -29,18 +29,6 @@ You're now ready to generate you new app:
 
 	yo reno
 	
-		
-
-This generator is not ment for public use. It's a tool for new developers in an existing application and not ment to create an application from scratch.
-
-First, clone the [reno-io repository](https://github.com/socialthrills/reno-ui)
-
-    git clone https://github.com/socialthrills/reno-ui
-
-This generator is included in package.json one you've run
-
-	npm install
-
 Grunt Tasks
 -------------
 
