@@ -40,6 +40,7 @@
     "karma-sinon-chai": "^0.2.0",
     "load-grunt-tasks": "~0.2.0",
     "lodash": "^2.4.1",
+    "process": "^0.7.0",
     "promise": "^5.0.0",
     "recess": "~1.1.9",
     "semver": "~2.2.1",
