@@ -362,7 +362,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= app_files.js %>'
                 ],
-                tasks: ['jsbeautifier', jshint:src', 'karma:unit', 'copy:build_appjs']
+                tasks: ['jsbeautifier', 'jshint:src', 'karma:unit', 'copy:build_appjs']
             },
 
             /**
