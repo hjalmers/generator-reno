@@ -3,6 +3,7 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
+var fs = require('fs');
 
 var ServiceGenerator = module.exports = function ServiceGenerator(args, options, config) {
 
