@@ -56,7 +56,7 @@ ServiceGenerator.prototype.askFor = function askFor() {
 
 ServiceGenerator.prototype.files = function files() {
   if(this.amdmodule){
-    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name, modulename: this.modulename, markupname: this.markupname });
+    cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/service.js', { name: this.name, modulename: this.modulename, markupname: this.markupname });
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);       
     this.template('spec.js', this.moduledir+ '/' + this.name + '.spec.js');
   }else{
