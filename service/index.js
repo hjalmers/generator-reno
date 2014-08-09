@@ -27,7 +27,7 @@ ServiceGenerator.prototype.askFor = function askFor() {
     validate: function(moduleName){
       if(moduleName !== '')
       {
-        var fullPath = ps.cwd() + '/' + moduleName + '.js';
+        var fullPath = process.cwd() + '/' + moduleName + '.js';
         if(fs.existsSync(fullPath))
         {
           return true;
@@ -44,7 +44,7 @@ ServiceGenerator.prototype.askFor = function askFor() {
       this.amdmodule = props.amdmodule;                         //  src/app/form/field
     }
     this.moduledir = this.amdmodule.substring(0, this.amdmodule.lastIndexOf('/'))         //  src/app/form
-    this.modulepath = ps.cwd() + '/' + this.amdmodule + '.js';    //  /..project/src/app/form/field
+    this.modulepath = process.cwd() + '/' + this.amdmodule + '.js';    //  /..project/src/app/form/field
 
     this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
     
