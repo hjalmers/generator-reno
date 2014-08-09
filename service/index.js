@@ -18,7 +18,7 @@ var ServiceGenerator = module.exports = function ServiceGenerator(args, options,
 
 util.inherits(ServiceGenerator, yeoman.generators.NamedBase);
 
-DirectiveGenerator.prototype.askFor = function askFor() {
+servicegenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   var prompts = [{
