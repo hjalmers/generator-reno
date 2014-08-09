@@ -43,13 +43,12 @@ ServiceGenerator.prototype.askFor = function askFor() {
     this.needpartial = props.needpartial;
     if(props.amdmodule){
       this.amdmodule = props.amdmodule;                         //  src/app/form/field
+      this.moduledir = this.amdmodule.substring(0, this.amdmodule.lastIndexOf('/'))         //  src/app/form
+      this.modulepath = process.cwd() + '/' + this.amdmodule + '.js';    //  /..project/src/app/form/field
+      this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
+      this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/') + 1, this.moduledir.length); //form
     }
-    this.moduledir = this.amdmodule.substring(0, this.amdmodule.lastIndexOf('/'))         //  src/app/form
-    this.modulepath = process.cwd() + '/' + this.amdmodule + '.js';    //  /..project/src/app/form/field
-
-    this.dottedmoduledir = this.moduledir.replace('src', '..');                               //  ../app/form
     
-    this.modulename = this.moduledir.substring(this.moduledir.lastIndexOf('/') + 1, this.moduledir.length); //form
     cb();
   }.bind(this));
 };
