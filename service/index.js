@@ -18,7 +18,7 @@ var ServiceGenerator = module.exports = function ServiceGenerator(args, options,
 
 util.inherits(ServiceGenerator, yeoman.generators.NamedBase);
 
-servicegenerator.prototype.askFor = function askFor() {
+ServiceGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   var prompts = [{
@@ -53,7 +53,7 @@ servicegenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-servicegenerator.prototype.files = function files() {
+ServiceGenerator.prototype.files = function files() {
   if(this.amdmodule){
     cgUtils.chainTemplate(this.amdmodule,  __dirname + '/templates/directive.js', { name: this.name, modulename: this.modulename, markupname: this.markupname });
     this.log.writeln(' updating'.green + ' %s',this.amdmodule);       
