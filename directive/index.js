@@ -4,7 +4,6 @@ var yeoman = require('yeoman-generator');
 var path = require('path');
 var cgUtils = require('../utils.js');
 var fs = require('fs');
-var ps = require('process');
 
 var DirectiveGenerator = module.exports = function DirectiveGenerator(args, options, config) {
 
@@ -33,7 +32,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
     name: 'amdmodule',
     message: 'Enter the path to the module that should hold the directive (i.e. src/app/form/field)?',
     validate: function(moduleName){
-      var fullPath = ps.cwd() + '/' + moduleName + '.js';
+      var fullPath = process.cwd() + '/' + moduleName + '.js';
       if(fs.existsSync(fullPath))
       {
         return true;
